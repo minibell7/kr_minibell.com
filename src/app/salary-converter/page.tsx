@@ -3,12 +3,12 @@ import styles from './page.module.css';
 import SalaryClient from './SalaryClient';
 
 export const metadata: Metadata = {
-    title: 'Free Salary Converter | Hourly to Yearly Calculator',
-    description: 'Convert your salary between hourly, daily, weekly, bi-weekly, monthly, and yearly rates. See your true take-home potential.',
-    keywords: ['salary converter', 'hourly to yearly', 'paycheck calculator', 'wage converter', 'income calculator'],
+    title: '급여 계산기 | 연봉 실수령액 계산 & 시급 변환',
+    description: '내 연봉의 실제 월령액은 얼마일까? 시급, 월급, 연봉을 자유롭게 변환하고 세전/세후 예상 금액을 확인해보세요. 2025년 최저시급 적용.',
+    keywords: ['급여계산기', '연봉계산기', '실수령액', '시급계산기', '월급계산기', '2025최저시급'],
     openGraph: {
-        title: 'Free Salary Converter | minibell.com',
-        description: 'Convert hourly wages to yearly salary instantly.',
+        title: '급여 & 연봉 계산기 | 미니벨 유틸리티',
+        description: '연봉 3000만원, 내 통장엔 얼마가 들어올까? 지금 바로 확인하세요.',
         type: 'website',
     }
 };
@@ -16,53 +16,34 @@ export const metadata: Metadata = {
 export default function SalaryConverterPage() {
     return (
         <div className={styles.pageWrapper}>
-            <h1 className={styles.title}>Salary Converter</h1>
+            <h1 className={styles.title}>급여 계산기</h1>
             <p className={styles.description}>
-                Instantly convert between hourly, monthly, and yearly income.
+                연봉, 월급, 시급을 입력하여 예상 실수령액과 환산 금액을 확인하세요.
             </p>
 
             <SalaryClient />
 
             <section className={styles.seoSection}>
-                <h2>Why Use a Salary Converter?</h2>
+                <h2>알아두면 쓸모있는 급여 상식</h2>
                 <p>
-                    Understanding your income in different timeframes is essential for financial planning. Whether you're negotiating a new job offer that pays hourly, or trying to budget your monthly expenses based on an annual salary, a <strong>Salary Converter</strong> bridges the gap.
-                </p>
-                <p>
-                    It helps you answer questions like: "Is $25/hour enough to cover my $3,000 monthly rent?" or "What does a $60,000 salary look like in my weekly paycheck?"
+                    <strong>통상임금(209시간)이란?</strong><br />
+                    대한민국 근로기준법상 주 40시간(하루 8시간) 근무자의 월 소정근로시간은 <strong>209시간</strong>입니다. (주휴시간 포함)<br />
+                    <em>(40시간 + 8시간) × 365일 ÷ 7일 ÷ 12개월 ≒ 209시간</em>
                 </p>
 
-                <h2>How to Use</h2>
-                <ol>
-                    <li><strong>Enter Amount:</strong> Type in your current or expected pay rate.</li>
-                    <li><strong>Select Frequency:</strong> Choose whether that amount is Hourly, Daily, Weekly, Bi-Weekly, Monthly, or Yearly.</li>
-                    <li><strong>Adjust Hours:</strong> If you work more or less than the standard 40 hours a week, adjust the settings.</li>
-                    <li><strong>View Results:</strong> Instantly see the equivalent values for all other timeframes in the table below.</li>
-                </ol>
+                <h2>2025년 최저시급</h2>
+                <p>
+                    2025년 최저시급은 <strong>10,030원</strong>입니다. 이를 월급(209시간 기준)으로 환산하면 <strong>2,096,270원</strong>입니다.
+                </p>
 
-                <h2>Common Conversions (Based on 40hr/week)</h2>
-                <ul>
-                    <li><strong>$15/hour:</strong> Approx. $31,200/year</li>
-                    <li><strong>$20/hour:</strong> Approx. $41,600/year</li>
-                    <li><strong>$25/hour:</strong> Approx. $52,000/year</li>
-                    <li><strong>$50,000/year:</strong> Approx. $24.04/hour</li>
-                    <li><strong>$100,000/year:</strong> Approx. $48.08/hour</li>
+                <h2>세전 vs 세후 (예상 공제율)</h2>
+                <ul className={styles.taxInfoList}>
+                    <li><strong>4대보험:</strong> 국민연금(4.5%), 건강보험(약 3.5%), 장기요양(건보료의 약 12%), 고용보험(0.9%) 등 약 9%~10%가 기본 공제됩니다.</li>
+                    <li><strong>소득세:</strong> 급여 구간과 부양가족 수에 따라 근로소득 간이세액표를 기준으로 원천징수됩니다.</li>
                 </ul>
 
-                <h2>FAQ</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. Does this include taxes?</h3>
-                        <p>A. No, this calculator shows <strong>Gross Income</strong> (before taxes and deductions). Your actual "take-home" pay will be lower depending on your local tax laws, insurance, and retirement contributions.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. How many work hours are in a year?</h3>
-                        <p>A. A standard full-time job (40 hours/week) is typically calculated as 2,080 hours per year (40 hours × 52 weeks).</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. What is "Bi-Weekly" pay?</h3>
-                        <p>A. Bi-weekly means you get paid every two weeks. This results in 26 paychecks per year. It is one of the most common pay schedules in the US.</p>
-                    </div>
+                <div className={styles.disclaimer}>
+                    <strong>주의사항:</strong> 이 계산기는 일반적인 근로자를 기준으로 한 <strong>단순 예상치</strong>입니다. 실제 급여는 회사 내규, 비과세 식대, 부양가족 수, 연말정산 결과에 따라 달라질 수 있습니다.
                 </div>
             </section>
         </div>

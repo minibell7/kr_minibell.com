@@ -17,6 +17,8 @@
     -webkit-text-fill-color: transparent;
     margin: 0;
     text-align: center;
+    /* Fallback for visibility if gradients fail */
+    text-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
 }
 
 .description {
@@ -29,31 +31,59 @@
 .card {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
-    border-radius: 20px;
-    gap: 1.5rem;
+    padding: 2.5rem;
+    border-radius: 24px;
+    gap: 2rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 550px;
     background: var(--bg-secondary);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 .inputSection {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .inputGroup {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    flex: 1;
+    gap: 0.8rem;
 }
 
 .inputGroup label {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
-    font-size: 0.9rem;
+    font-size: 1rem;
+}
+
+.toggleGroup {
+    display: flex;
+    padding: 0.3rem;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    gap: 0.3rem;
+    border: 1px solid var(--border-color);
+}
+
+.toggleBtn {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggleBtn.active {
+    background: var(--bg-secondary);
+    color: #22c55e;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .amountWrapper {
@@ -62,99 +92,113 @@
     align-items: center;
 }
 
-.currencySymbol {
-    position: absolute;
-    left: 1rem;
-    color: var(--text-secondary);
-    font-size: 1.2rem;
-}
-
 .input {
     width: 100%;
-    padding: 1rem 1rem 1rem 2.5rem;
+    padding: 1.2rem;
     border-radius: 12px;
     border: 2px solid var(--border-color);
     background: var(--bg-primary);
     color: var(--text-primary);
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     outline: none;
     transition: border-color 0.2s;
+    text-align: right;
+    padding-right: 3rem;
 }
 
 .input:focus {
     border-color: #22c55e;
 }
 
-.select {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 12px;
-    border: 2px solid var(--border-color);
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    outline: none;
-    cursor: pointer;
-    appearance: none;
-}
-
-.settingsSection {
-    display: flex;
-    gap: 1rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.setting {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex: 1;
-}
-
-.setting label {
-    font-size: 0.85rem;
+.wonText {
+    position: absolute;
+    right: 1.2rem;
     color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1rem;
 }
 
-.smallInput {
-    padding: 0.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background: var(--bg-primary);
-    color: var(--text-primary);
+.divider {
+    height: 1px;
+    background: var(--border-color);
     width: 100%;
 }
 
 .resultsTable {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .resultRow {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
-    border-radius: 8px;
+    align-items: center;
+    padding: 1.2rem;
+    border-radius: 12px;
     background: var(--bg-primary);
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    /* Ensure high contrast in dark mode */
+    border: 1px solid transparent;
 }
 
-.resultRow span:last-child {
-    font-weight: 700;
+.label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.value {
     color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .highlight {
     background: rgba(34, 197, 94, 0.1);
-    border: 1px solid #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
 }
 
-.highlight span:last-child {
+.highlight .value {
     color: #22c55e;
+}
+
+/* Net Pay Row Highlight */
+.netPay {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(20, 184, 166, 0.2));
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    margin-top: 0.5rem;
+}
+
+.netPayLabelGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.netLabel {
+    color: #4ade80;
+    /* Brighter green for dark mode visibility */
+    font-weight: 800;
+}
+
+.netSub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.netValue {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+.exInfo {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin: 0;
+    opacity: 0.7;
 }
 
 .seoSection {
@@ -171,41 +215,23 @@
     font-size: 1.5rem;
 }
 
-.seoSection ul,
-.seoSection ol {
-    padding-left: 1.5rem;
-}
-
-.seoSection li {
-    margin-bottom: 0.5rem;
-}
-
-.faqList {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.faqItem {
-    background: var(--bg-secondary);
+.taxInfoList {
+    background: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 12px;
+    list-style: none;
 }
 
-.faqItem h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.1rem;
-    color: var(--text-primary);
+.taxInfoList li {
+    margin-bottom: 0.8rem;
 }
 
-.faqItem p {
-    margin: 0;
-    font-size: 1rem;
-    color: var(--text-secondary);
-}
-
-@media (max-width: 600px) {
-    .inputSection {
-        flex-direction: column;
-    }
+.disclaimer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(239, 68, 68, 0.1);
+    /* Red tint */
+    border-radius: 8px;
+    color: #fca5a5;
+    font-size: 0.9rem;
 }
