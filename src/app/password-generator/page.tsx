@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import PasswordClient from './PasswordClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '안전한 비밀번호 생성기 | 강력한 랜덤 암호 추천',
@@ -36,21 +37,20 @@ export default function PasswordGeneratorPage() {
                     <li><strong>유추 불가능성:</strong> 생일, 전화번호, 이름 등 개인정보가 포함된 암호는 피해야 합니다.</li>
                 </ul>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 온라인에서 비밀번호를 만들어도 안전한가요?</h3>
-                        <p>A. 네, 100% 안전합니다. 이 도구는 **클라이언트(브라우저) 내부**에서만 작동하며, 생성된 비밀번호는 서버로 전송되거나 저장되지 않습니다. 오직 여러분만 볼 수 있습니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 이렇게 복잡한 걸 어떻게 외우나요?</h3>
-                        <p>A. 외우려고 하지 마세요! <strong>비밀번호 관리자(Password Manager)</strong> 앱을 사용하여 안전하게 저장하는 것이 좋습니다. 모든 사이트마다 다른 비밀번호를 쓰는 것이 보안의 핵심입니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 특수문자가 왜 중요한가요?</h3>
-                        <p>A. 비밀번호의 '복잡도(Entropy)'를 높여주기 때문입니다. 같은 길이여도 특수문자가 섞이면 해킹 프로그램이 정답을 찾는 데 걸리는 시간이 몇천 배로 늘어납니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 온라인에서 비밀번호를 만들어도 안전한가요?",
+                        answer: "A. 네, 100% 안전합니다. 이 도구는 클라이언트(브라우저) 내부에서만 작동하며, 생성된 비밀번호는 서버로 전송되거나 저장되지 않습니다. 오직 여러분만 볼 수 있습니다."
+                    },
+                    {
+                        question: "Q. 이렇게 복잡한 걸 어떻게 외우나요?",
+                        answer: "A. 외우려고 하지 마세요! 비밀번호 관리자(Password Manager) 앱을 사용하여 안전하게 저장하는 것이 좋습니다. 모든 사이트마다 다른 비밀번호를 쓰는 것이 보안의 핵심입니다."
+                    },
+                    {
+                        question: "Q. 특수문자가 왜 중요한가요?",
+                        answer: "A. 비밀번호의 '복잡도(Entropy)'를 높여주기 때문입니다. 같은 길이여도 특수문자가 섞이면 해킹 프로그램이 정답을 찾는 데 걸리는 시간이 몇천 배로 늘어납니다."
+                    }
+                ]} />
             </section>
         </div>
     );

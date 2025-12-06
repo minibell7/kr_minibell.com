@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import DDayClient from './DDayClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '디데이 계산기 (D-Day) | 날짜수 계산, 기념일 챙기기',
@@ -37,17 +38,16 @@ export default function DDayPage() {
                     <li><strong>자동 기념일 추천:</strong> 100일, 200일, 1주년 등 챙겨야 할 기념일을 자동으로 알려줍니다.</li>
                 </ul>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. '오늘부터 1일' 옵션은 언제 쓰나요?</h3>
-                        <p>A. 주로 **커플 기념일**을 챙길 때 사용합니다. 만난 당일을 1일로 계산해야 100일 기념일 날짜가 정확하게 맞습니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 만나이 계산도 되나요?</h3>
-                        <p>A. 네, 생년월일을 입력하면 태어난 지 며칠이 지났는지(D+) 바로 확인할 수 있습니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. '오늘부터 1일' 옵션은 언제 쓰나요?",
+                        answer: "A. 주로 커플 기념일을 챙길 때 사용합니다. 만난 당일을 1일로 계산해야 100일 기념일 날짜가 정확하게 맞습니다."
+                    },
+                    {
+                        question: "Q. 만나이 계산도 되나요?",
+                        answer: "A. 네, 생년월일을 입력하면 태어난 지 며칠이 지났는지(D+) 바로 확인할 수 있습니다."
+                    }
+                ]} />
             </section>
         </div>
     );

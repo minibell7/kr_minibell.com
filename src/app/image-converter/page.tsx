@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import ConverterClient from './ConverterClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '무료 WebP 변환기 | JPG/PNG를 WebP로 변환 (용량 줄이기)',
@@ -46,17 +47,16 @@ export default function ImageConverterPage() {
                     <li><strong>비교 및 다운로드:</strong> 원본 용량과 줄어든 용량을 비교해보고 '다운로드' 버튼을 누르세요.</li>
                 </ol>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 화질이 나빠지지 않나요?</h3>
-                        <p>A. WebP는 효율적인 압축 알고리즘을 사용하므로 눈으로 봤을 때 차이를 느끼기 어렵습니다. 웹용으로는 최적의 선택입니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 내 사진이 서버에 저장되나요?</h3>
-                        <p>A. 아니요! 이 변환기는 **100% 클라이언트 사이드**에서 작동합니다. 여러분의 사진은 서버로 전송되지 않고 오직 여러분의 브라우저 안에서만 처리되므로 개인정보 유출 걱정이 없습니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 화질이 나빠지지 않나요?",
+                        answer: "A. WebP는 효율적인 압축 알고리즘을 사용하므로 눈으로 봤을 때 차이를 느끼기 어렵습니다. 웹용으로는 최적의 선택입니다."
+                    },
+                    {
+                        question: "Q. 내 사진이 서버에 저장되나요?",
+                        answer: "A. 아니요! 이 변환기는 **100% 클라이언트 사이드**에서 작동합니다. 여러분의 사진은 서버로 전송되지 않고 오직 여러분의 브라우저 안에서만 처리되므로 개인정보 유출 걱정이 없습니다."
+                    }
+                ]} />
             </section>
         </div>
     );

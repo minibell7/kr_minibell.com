@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import OGGeneratorClient from './OGGeneratorClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '오픈 그래프(OG) 태그 생성기 | 카카오톡/링크 미리보기 설정',
@@ -47,17 +48,16 @@ export default function OGGeneratorPage() {
                     <li><strong>적용:</strong> 내 웹사이트의 <code>&lt;head&gt;</code> 태그 안에 붙여넣기만 하면 끝!</li>
                 </ol>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 카카오톡에 이미지를 바꿨는데 반영이 안 돼요!</h3>
-                        <p>A. 카카오톡이나 페이스북은 한 번 가져간 이미지를 서버에 임시 저장(캐시)해둡니다. 각 서비스의 '캐시 삭제 도구(Debugger)'를 이용해 초기화하거나, 이미지 파일명을 바꿔서 다시 시도해보세요.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 이미지 주소는 어디서 가져오나요?</h3>
-                        <p>A. 내 서버나 블로그에 업로드된 이미지 위에서 우클릭 후 '이미지 주소 복사'를 하면 됩니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 카카오톡에 이미지를 바꿨는데 반영이 안 돼요!",
+                        answer: "A. 카카오톡이나 페이스북은 한 번 가져간 이미지를 서버에 임시 저장(캐시)해둡니다. 각 서비스의 '캐시 삭제 도구(Debugger)'를 이용해 초기화하거나, 이미지 파일명을 바꿔서 다시 시도해보세요."
+                    },
+                    {
+                        question: "Q. 이미지 주소는 어디서 가져오나요?",
+                        answer: "A. 내 서버나 블로그에 업로드된 이미지 위에서 우클릭 후 '이미지 주소 복사'를 하면 됩니다."
+                    }
+                ]} />
             </section>
         </div>
     );

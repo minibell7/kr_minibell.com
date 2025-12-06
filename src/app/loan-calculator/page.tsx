@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import LoanClient from './LoanClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '대출 이자 계산기 | 원리금균등상환, 월 납입금 계산',
@@ -37,17 +38,16 @@ export default function LoanCalculatorPage() {
                     <li><strong>총 상환 금액:</strong> 원금에 총 이자를 더한, 실제로 갚아야 할 전체 금액입니다.</li>
                 </ul>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 원리금 균등 상환이 뭔가요?</h3>
-                        <p>A. 대출 기간 동안 매달 원금과 이자를 합쳐서 **동일한 금액**을 갚아나가는 방식입니다. 계획적인 지출 관리가 가능해 가장 많이 쓰이는 방식입니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 전세 자금 대출도 계산되나요?</h3>
-                        <p>A. 전세 대출의 경우 보통 '만기 일시 상환'(이자만 내다가 마지막에 원금 상환) 방식이 많습니다. 이 계산기는 원금도 같이 갚는 방식 기준이므로, 이 계산기의 '월 납입금' 결과에서 원금 부분을 제외하고 참고하셔야 할 수 있습니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 원리금 균등 상환이 뭔가요?",
+                        answer: "A. 대출 기간 동안 매달 원금과 이자를 합쳐서 **동일한 금액**을 갚아나가는 방식입니다. 계획적인 지출 관리가 가능해 가장 많이 쓰이는 방식입니다."
+                    },
+                    {
+                        question: "Q. 전세 자금 대출도 계산되나요?",
+                        answer: "A. 전세 대출의 경우 보통 '만기 일시 상환'(이자만 내다가 마지막에 원금 상환) 방식이 많습니다. 이 계산기는 원금도 같이 갚는 방식 기준이므로, 이 계산기의 '월 납입금' 결과에서 원금 부분을 제외하고 참고하셔야 할 수 있습니다."
+                    }
+                ]} />
             </section>
         </div>
     );

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import PercentageClient from './PercentageClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '퍼센트 계산기 | 백분율, 할인율, 증감율 계산',
@@ -45,13 +46,12 @@ export default function PercentagePage() {
                     </li>
                 </ul>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 퍼센트 포인트(%p)는 다른가요?</h3>
-                        <p>A. 네, 다릅니다. '퍼센트'는 비율의 변화를 말하고, '퍼센트 포인트'는 퍼센트 **수치 자체의 차이**를 말합니다. (예: 금리가 3%에서 4%가 되면, 1%p 상승한 것이지만 비율로는 33.3% 상승한 것입니다.)</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 퍼센트 포인트(%p)는 다른가요?",
+                        answer: "A. 네, 다릅니다. '퍼센트'는 비율의 변화를 말하고, '퍼센트 포인트'는 퍼센트 수치 자체의 차이를 말합니다. (예: 금리가 3%에서 4%가 되면, 1%p 상승한 것이지만 비율로는 33.3% 상승한 것입니다.)"
+                    }
+                ]} />
             </section>
         </div>
     );

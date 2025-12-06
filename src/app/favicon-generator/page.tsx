@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import FaviconGeneratorClient from './FaviconGeneratorClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '무료 파비콘 생성기 | 이미지로 아이콘(PNG) 만들기',
@@ -52,17 +53,16 @@ export default function FaviconGeneratorPage() {
                     </li>
                 </ol>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 어떤 파일을 올릴 수 있나요?</h3>
-                        <p>A. JPG, PNG, GIF 등 대부분의 이미지 파일을 지원합니다. 하지만 가장 깨끗한 결과를 위해 **배경이 투명한 고화질 PNG** 파일을 추천합니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. ICO 파일은 안 만드나요?</h3>
-                        <p>A. 과거에는 ICO 파일이 필수였지만, 최신 모던 브라우저들은 모두 **PNG 형식**의 파비콘을 완벽하게 지원합니다. PNG가 화질과 투명도 처리에 훨씬 유리합니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 어떤 파일을 올릴 수 있나요?",
+                        answer: "A. JPG, PNG, GIF 등 대부분의 이미지 파일을 지원합니다. 하지만 가장 깨끗한 결과를 위해 **배경이 투명한 고화질 PNG** 파일을 추천합니다."
+                    },
+                    {
+                        question: "Q. ICO 파일은 안 만드나요?",
+                        answer: "A. 과거에는 ICO 파일이 필수였지만, 최신 모던 브라우저들은 모두 **PNG 형식**의 파비콘을 완벽하게 지원합니다. PNG가 화질과 투명도 처리에 훨씬 유리합니다."
+                    }
+                ]} />
             </section>
         </div>
     );

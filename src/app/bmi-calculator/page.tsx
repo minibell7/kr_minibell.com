@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import BMIClient from './BMIClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '비만도 계산기 (BMI) | 다이어트 필수 체크',
@@ -42,21 +43,20 @@ export default function BMICalculatorPage() {
                     * 서구권 기준과 달리 한국인은 BMI 25 이상부터 비만으로 정의합니다. (아시아 태평양 기준)
                 </p>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. BMI는 누구에게나 정확한가요?</h3>
-                        <p>A. 아닙니다. 근육량이 많은 운동선수나 임신부, 노약자의 경우 BMI만으로는 정확한 비만도를 판정하기 어렵습니다. <strong>체성분 분석(인바디)</strong>을 함께 하는 것이 좋습니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 정상 체중을 유지하려면 어떻게 해야 하나요?</h3>
-                        <p>A. 규칙적인 식사와 주 3회 이상의 유산소 운동이 필수적입니다. 단순히 체중을 줄이는 것보다 근육량을 유지하면서 체지방을 줄이는 것이 중요합니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 고도비만이면 바로 운동해도 되나요?</h3>
-                        <p>A. 갑작스러운 고강도 운동은 관절에 무리를 줄 수 있습니다. 식단 조절과 가벼운 걷기부터 시작하여 전문의와 상담하는 것을 권장합니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. BMI는 누구에게나 정확한가요?",
+                        answer: "A. 아닙니다. 근육량이 많은 운동선수나 임신부, 노약자의 경우 BMI만으로는 정확한 비만도를 판정하기 어렵습니다. 체성분 분석(인바디)을 함께 하는 것이 좋습니다."
+                    },
+                    {
+                        question: "Q. 정상 체중을 유지하려면 어떻게 해야 하나요?",
+                        answer: "A. 규칙적인 식사와 주 3회 이상의 유산소 운동이 필수적입니다. 단순히 체중을 줄이는 것보다 근육량을 유지하면서 체지방을 줄이는 것이 중요합니다."
+                    },
+                    {
+                        question: "Q. 고도비만이면 바로 운동해도 되나요?",
+                        answer: "A. 갑작스러운 고강도 운동은 관절에 무리를 줄 수 있습니다. 식단 조절과 가벼운 걷기부터 시작하여 전문의와 상담하는 것을 권장합니다."
+                    }
+                ]} />
             </section>
         </div>
     );

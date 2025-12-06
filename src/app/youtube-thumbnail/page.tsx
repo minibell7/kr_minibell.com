@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import ThumbnailClient from './ThumbnailClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '무료 유튜브 썸네일 다운로더 | 고화질(HD, 4K) 이미지 추출',
@@ -58,17 +59,16 @@ export default function YoutubeThumbnailPage() {
                     <li><strong>무단 도용:</strong> 타인의 썸네일을 내 영상인 것처럼 속이거나 상업적으로 무단 사용하는 것은 저작권 침해입니다.</li>
                 </ul>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 쇼츠(Shorts) 영상도 되나요?</h3>
-                        <p>A. 네! 일반 영상뿐만 아니라 유튜브 쇼츠 링크를 넣어도 동일하게 썸네일을 추출할 수 있습니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. HD 화질 버튼이 안 보여요!</h3>
-                        <p>A. 원본 영상 자체가 낮은 화질로 업로드되었거나, 썸네일을 저화질로 설정한 경우에는 유튜브 서버에 HD 이미지가 존재하지 않을 수 있습니다. 이 경우 추출 가능한 가장 높은 화질을 보여드립니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 쇼츠(Shorts) 영상도 되나요?",
+                        answer: "A. 네! 일반 영상뿐만 아니라 유튜브 쇼츠 링크를 넣어도 동일하게 썸네일을 추출할 수 있습니다."
+                    },
+                    {
+                        question: "Q. HD 화질 버튼이 안 보여요!",
+                        answer: "A. 원본 영상 자체가 낮은 화질로 업로드되었거나, 썸네일을 저화질로 설정한 경우에는 유튜브 서버에 HD 이미지가 존재하지 않을 수 있습니다. 이 경우 추출 가능한 가장 높은 화질을 보여드립니다."
+                    }
+                ]} />
             </section>
         </div>
     );

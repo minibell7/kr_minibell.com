@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import LoremClient from './LoremClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '로렘 입숨 생성기 | 디자인용 더미 텍스트 (줄글 생성)',
@@ -44,17 +45,16 @@ export default function LoremIpsumPage() {
                     <li><strong>복사:</strong> 생성 버튼을 누른 후 '복사하기'를 클릭하여 내 작업물에 붙여넣으세요.</li>
                 </ol>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 진짜 라틴어인가요?</h3>
-                        <p>A. 원본은 라틴어 문학이지만, 현재 사용되는 로렘 입숨은 단어들을 무작위로 뒤섞고 변형했기 때문에 문법적으로 해석이 불가능한 '넌센스' 텍스트입니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 한글 로렘 입숨은 없나요?</h3>
-                        <p>A. 한글의 경우 '다람쥐 헌 쳇바퀴에 타고파' 같은 문장을 사용하거나, 애국가 가사를 쓰기도 합니다. 이 도구는 현재 글로벌 표준인 영문 로렘 입숨을 제공합니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 진짜 라틴어인가요?",
+                        answer: "A. 원본은 라틴어 문학이지만, 현재 사용되는 로렘 입숨은 단어들을 무작위로 뒤섞고 변형했기 때문에 문법적으로 해석이 불가능한 '넌센스' 텍스트입니다."
+                    },
+                    {
+                        question: "Q. 한글 로렘 입숨은 없나요?",
+                        answer: "A. 한글의 경우 '다람쥐 헌 쳇바퀴에 타고파' 같은 문장을 사용하거나, 애국가 가사를 쓰기도 합니다. 이 도구는 현재 글로벌 표준인 영문 로렘 입숨을 제공합니다."
+                    }
+                ]} />
             </section>
         </div>
     );

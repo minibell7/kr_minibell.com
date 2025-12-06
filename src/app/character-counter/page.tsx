@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import CounterClient from './CounterClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '글자수 세기 | 자기소개서, 이력서, 공백포함/제외 계산기',
@@ -46,17 +47,16 @@ export default function CharacterCounterPage() {
                     <li><strong>유튜브 제목:</strong> 60자 이내 권장 (잘림 방지)</li>
                 </ul>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 공백 포함과 제외의 차이는?</h3>
-                        <p>A. '공백 포함'은 띄어쓰기(스페이스바)와 줄바꿈(엔터)도 글자 수로 칩니다. '공백 제외'는 오직 눈에 보이는 글자만 셉니다. 자소서 제출처의 기준을 꼭 확인하세요.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 맞춤법 검사도 되나요?</h3>
-                        <p>A. 현재 이 도구는 글자수 계산 기능에 집중하고 있습니다. 맞춤법 검사는 추후 업데이트 예정입니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 공백 포함과 제외의 차이는?",
+                        answer: "A. '공백 포함'은 띄어쓰기(스페이스바)와 줄바꿈(엔터)도 글자 수로 칩니다. '공백 제외'는 오직 눈에 보이는 글자만 셉니다. 자소서 제출처의 기준을 꼭 확인하세요."
+                    },
+                    {
+                        question: "Q. 맞춤법 검사도 되나요?",
+                        answer: "A. 현재 이 도구는 글자수 계산 기능에 집중하고 있습니다. 맞춤법 검사는 추후 업데이트 예정입니다."
+                    }
+                ]} />
             </section>
         </div>
     );

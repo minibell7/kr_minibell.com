@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import PomodoroClient from './PomodoroClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '무료 뽀모도로 타이머 | 집중력 향상 공부 타이머 (25분)',
@@ -44,17 +45,16 @@ export default function PomodoroPage() {
                     <li><strong>반복:</strong> 4세트(약 2시간)를 반복한 후에는 15~30분 정도 길게 휴식하는 것이 좋습니다.</li>
                 </ol>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 꼭 25분이어야 하나요?</h3>
-                        <p>A. 25분이 표준이지만, 자신의 스타일에 맞게 30분, 50분 등 집중 시간을 늘려도 좋습니다. 핵심은 '집중'과 '휴식'을 분리하는 것입니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 알림 소리가 나나요?</h3>
-                        <p>A. 네, 타이머가 종료되면 짧은 알림음이 재생됩니다. (브라우저 정책상 소리 자동 재생이 차단된 경우, 화면 터치 후 다시 시도해주세요.)</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. 꼭 25분이어야 하나요?",
+                        answer: "A. 25분이 표준이지만, 자신의 스타일에 맞게 30분, 50분 등 집중 시간을 늘려도 좋습니다. 핵심은 '집중'과 '휴식'을 분리하는 것입니다."
+                    },
+                    {
+                        question: "Q. 알림 소리가 나나요?",
+                        answer: "A. 네, 타이머가 종료되면 짧은 알림음이 재생됩니다. (브라우저 정책상 소리 자동 재생이 차단된 경우, 화면 터치 후 다시 시도해주세요.)"
+                    }
+                ]} />
             </section>
         </div>
     );

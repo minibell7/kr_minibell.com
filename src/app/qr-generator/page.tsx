@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import QRGeneratorClient from './QRGeneratorClient';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
     title: '무료 QR 코드 생성기 | 링크, 와이파이, 명함 QR 만들기',
@@ -44,21 +45,20 @@ export default function QRGeneratorPage() {
                     <li><strong>이벤트:</strong> 청첩장이나 행사 포스터에 구글 지도 장소 링크를 담아보세요.</li>
                 </ul>
 
-                <h2>자주 묻는 질문 (FAQ)</h2>
-                <div className={styles.faqList}>
-                    <div className={styles.faqItem}>
-                        <h3>Q. QR 코드에 유효기간이 있나요?</h3>
-                        <p>A. 아니요! 여기서 만든 QR 코드는 '정적(Static)' 코드이므로 정보가 이미지 자체에 담겨 있어 영구적으로 작동합니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 상업적으로 써도 되나요?</h3>
-                        <p>A. 네, 개인/기업 모두 제한 없이 무료로 상업적 이용이 가능합니다.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. 스캔이 잘 안돼요!</h3>
-                        <p>A. QR 코드가 너무 작거나 흐릿하면 인식이 안 될 수 있습니다. 또한 배경색과 코드색의 대비(흰 배경에 검은 코드 권장)가 뚜렷해야 잘 인식됩니다.</p>
-                    </div>
-                </div>
+                <FAQSection items={[
+                    {
+                        question: "Q. QR 코드에 유효기간이 있나요?",
+                        answer: "A. 아니요! 여기서 만든 QR 코드는 '정적(Static)' 코드이므로 정보가 이미지 자체에 담겨 있어 영구적으로 작동합니다."
+                    },
+                    {
+                        question: "Q. 상업적으로 써도 되나요?",
+                        answer: "A. 네, 개인/기업 모두 제한 없이 무료로 상업적 이용이 가능합니다."
+                    },
+                    {
+                        question: "Q. 스캔이 잘 안돼요!",
+                        answer: "A. QR 코드가 너무 작거나 흐릿하면 인식이 안 될 수 있습니다. 또한 배경색과 코드색의 대비(흰 배경에 검은 코드 권장)가 뚜렷해야 잘 인식됩니다."
+                    }
+                ]} />
             </section>
         </div>
     );
