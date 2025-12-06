@@ -1,0 +1,161 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 6rem 0 4rem;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  letter-spacing: -0.04em;
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  position: relative;
+  z-index: 2;
+}
+
+.heroImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  z-index: 0;
+  opacity: 0.6;
+  mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionDesc {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Grid Layout for PC */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Compact List Layout for Mobile (Utility Section Only) */
+.compactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  /* On mobile, utility sections use compact list */
+  .utilityGrid {
+    display: none;
+    /* Hide grid on mobile for utilities */
+  }
+
+  .utilityList {
+    display: flex;
+    /* Show list on mobile */
+  }
+}
+
+/* PC-specific adjustments */
+@media (min-width: 769px) {
+  .utilityGrid {
+    display: grid;
+    /* Show grid on PC */
+  }
+
+  .utilityList {
+    display: none;
+    /* Hide list on PC */
+  }
+}

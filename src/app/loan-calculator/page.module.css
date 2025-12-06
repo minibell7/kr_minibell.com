@@ -1,0 +1,174 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #f59e0b, #ef4444);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-align: center;
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 20px;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    background: var(--bg-secondary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.inputGroup label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: #f59e0b;
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.results {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.mainResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.mainResult span:first-child {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.monthlyValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #f59e0b;
+}
+
+.subResult {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.subResult span:last-child {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.totalRow {
+    margin-top: 0.5rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.totalRow span {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.seoSection {
+    margin-top: 4rem;
+    width: 100%;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.seoSection h2 {
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.seoSection ul,
+.seoSection ol {
+    padding-left: 1.5rem;
+}
+
+.seoSection li {
+    margin-bottom: 0.5rem;
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faqItem {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.faqItem h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.faqItem p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}

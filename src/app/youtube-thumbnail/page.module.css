@@ -1,0 +1,128 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+.inputArea {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    padding: 1.5rem;
+    border-radius: 16px;
+}
+
+.input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+}
+
+.input:focus {
+    border-color: var(--accent-primary);
+}
+
+.generateBtn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.generateBtn:hover {
+    opacity: 0.9;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.resultCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 16px;
+    gap: 1rem;
+}
+
+.resultCard h3 {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.resultCard img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.downloadBtn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.downloadBtn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-primary);
+}
+
+.seoSection {
+    margin-top: 4rem;
+    width: 100%;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.seoSection h2 {
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.seoSection ul,
+.seoSection ol {
+    padding-left: 1.5rem;
+}
+
+.seoSection li {
+    margin-bottom: 0.5rem;
+}

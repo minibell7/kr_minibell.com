@@ -1,0 +1,260 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-align: center;
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 20px;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.calcRow {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.inputWrapper input {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    width: 100px;
+    text-align: center;
+    outline: none;
+}
+
+.inputWrapper input:focus {
+    border-color: #3b82f6;
+}
+
+.result {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: right;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.highlight {
+    color: var(--accent-primary);
+    font-size: 2rem;
+    margin-left: 0.5rem;
+}
+
+.seoSection {
+    margin-top: 4rem;
+    width: 100%;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-align: center;
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 20px;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.calcRow {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.inputWrapper input {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    width: 100px;
+    text-align: center;
+    outline: none;
+}
+
+.inputWrapper input:focus {
+    border-color: #3b82f6;
+}
+
+.result {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: right;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.highlight {
+    color: var(--accent-primary);
+    font-size: 2rem;
+    margin-left: 0.5rem;
+}
+
+.seoSection {
+    margin-top: 4rem;
+    width: 100%;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.seoSection h2 {
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.seoSection ul,
+.seoSection ol {
+    padding-left: 1.5rem;
+}
+
+.seoSection li {
+    margin-bottom: 0.5rem;
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faqItem {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.faqItem h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.faqItem p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+    .inputWrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .inputWrapper input {
+        width: 100%;
+    }
+}

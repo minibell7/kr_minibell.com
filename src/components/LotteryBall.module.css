@@ -1,0 +1,42 @@
+.ball {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow:
+        5px 5px 10px #d1d1d1,
+        -5px -5px 10px #ffffff,
+        inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ball:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #333;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.special {
+    border: 3px solid #FFD700;
+    box-shadow:
+        0 0 15px rgba(255, 215, 0, 0.5),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Dark mode support via global theme context usually, but here we use media query or specific class if needed. 
+   For balls, keeping them bright/colorful is usually better, but let's add a dark mode tweak if the parent has dark mode. */
+@media (prefers-color-scheme: dark) {
+    .number {
+        color: #000;
+    }
+}

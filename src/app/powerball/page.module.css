@@ -1,0 +1,127 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+.generatorCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 800px;
+    min-height: 300px;
+    justify-content: center;
+}
+
+.ballGroup {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.whiteBalls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.plusSign {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.placeholder {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-weight: 500;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.generateBtn {
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #ff4d4d, #ff9999);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+.generateBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.4);
+}
+
+.generateBtn:active {
+    transform: translateY(1px);
+}
+
+.generateBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.seoSection {
+    margin-top: 4rem;
+    width: 100%;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.seoSection h2 {
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.seoSection ul,
+.seoSection ol {
+    padding-left: 1.5rem;
+}
+
+.seoSection li {
+    margin-bottom: 0.5rem;
+}

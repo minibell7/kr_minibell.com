@@ -1,0 +1,223 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-align: center;
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 20px;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 700px;
+    background: var(--bg-secondary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.input {
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    width: 100px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: #6366f1;
+}
+
+.radioGroup {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--bg-primary);
+    padding: 0.3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.radioLabel {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.radioLabel input {
+    display: none;
+}
+
+.radioLabel.active {
+    background: #6366f1;
+    color: white;
+}
+
+.generateButton {
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    height: 50px;
+}
+
+.generateButton:hover {
+    opacity: 0.9;
+}
+
+.outputArea {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea {
+    width: 100%;
+    height: 300px;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+    resize: vertical;
+    outline: none;
+    font-family: inherit;
+}
+
+.copyButton {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-end;
+}
+
+.copyButton:hover {
+    background: var(--hover-bg);
+}
+
+.copyButton.copied {
+    background: #10b981;
+    color: white;
+    border-color: #10b981;
+}
+
+.seoSection {
+    margin-top: 4rem;
+    width: 100%;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.seoSection h2 {
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.seoSection ul,
+.seoSection ol {
+    padding-left: 1.5rem;
+}
+
+.seoSection li {
+    margin-bottom: 0.5rem;
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faqItem {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.faqItem h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.faqItem p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .generateButton {
+        width: 100%;
+    }
+}

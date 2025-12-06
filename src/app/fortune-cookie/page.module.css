@@ -1,0 +1,104 @@
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+.cookieCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    border-radius: 24px;
+    gap: 2rem;
+    width: 100%;
+    max-width: 600px;
+    min-height: 400px;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cookieCard:hover {
+    transform: scale(1.02);
+}
+
+.cookie {
+    font-size: 8rem;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cookie.broken {
+    transform: scale(0.8) rotate(15deg);
+    opacity: 0.5;
+}
+
+.message {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    text-align: center;
+}
+
+.message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.instruction {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+.seoSection {
+    margin-top: 4rem;
+    width: 100%;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.seoSection h2 {
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.seoSection ul,
+.seoSection ol {
+    padding-left: 1.5rem;
+}
+
+.seoSection li {
+    margin-bottom: 0.5rem;
+}
