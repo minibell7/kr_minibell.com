@@ -268,6 +268,16 @@ export const projects: Project[] = [
         category: 'app',
         section: 'featured-app'
     },
+    {
+        id: 'flirting-test',
+        title: '플러팅 능력 고사',
+        description: '저의 4번째 PWA 작품입니다. 다양한 상황극을 통해 당신의 플러팅 실력과 연애 스타일을 진단해보세요.',
+        url: 'https://flirting-kr.mini-bell.com/',
+        tags: ['PWA', 'Fun', 'AI'],
+        featured: true,
+        category: 'app',
+        section: 'featured-app'
+    },
 
     // --- Content / Blogs ---
     {
