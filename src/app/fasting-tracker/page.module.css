@@ -22,9 +22,21 @@
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    /* Brighter gradient */
+    background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    /* Text Shadow Fallback for better contrast */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@media (max-width: 768px) {
+    .title {
+        background: none;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
+    }
 }
 
 .subtitle {

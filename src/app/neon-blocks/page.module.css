@@ -34,6 +34,16 @@
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+        /* Reduce shadow spread for sharpness on small screens */
+        text-shadow:
+            0 0 5px var(--accent-primary),
+            0 0 15px var(--accent-primary);
+    }
+}
+
 .gameArea {
     display: flex;
     gap: 2rem;

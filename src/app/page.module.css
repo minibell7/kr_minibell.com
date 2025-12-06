@@ -20,13 +20,26 @@
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  background: linear-gradient(135deg, #ffffff 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%);
+  /* Brighter gradient: Start with White, move to bright Violet/Pink */
+  background: linear-gradient(135deg, #ffffff 30%, #a78bfa 70%, #f472b6 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
   letter-spacing: -0.04em;
-  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
+  /* Reduced blur radius for sharper look */
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+}
+
+@media (max-width: 768px) {
+  .title {
+    /* Solid white on mobile for maximum clarity */
+    background: none;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  }
 }
 
 .subtitle {
