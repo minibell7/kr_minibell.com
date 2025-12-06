@@ -20,10 +20,23 @@
     font-size: 3rem;
     font-weight: 800;
     background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0;
     text-align: center;
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.4));
+}
+
+@media (max-width: 768px) {
+    .title {
+        background: none;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+        filter: none;
+    }
 }
 
 .description {

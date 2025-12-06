@@ -29,6 +29,19 @@
     letter-spacing: -0.03em;
     position: relative;
     transition: all 0.3s ease;
+    /* Desktop Shadow */
+    filter: drop-shadow(0 0 5px rgba(139, 92, 246, 0.3));
+}
+
+@media (max-width: 768px) {
+    .logo {
+        background: none;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
+        text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        filter: none;
+    }
 }
 
 .logo:hover {
