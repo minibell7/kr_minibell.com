@@ -41,23 +41,23 @@ export default function PercentageClient() {
         <div className={styles.container}>
             {/* Mode 1 */}
             <div className={`${styles.card} glass-panel`}>
-                <h3>Percentage Value</h3>
+                <h3>비율 값 계산 (할인 금액 등)</h3>
                 <div className={styles.calcRow}>
                     <div className={styles.inputWrapper}>
-                        <span>What is</span>
+                        <input
+                            type="number"
+                            value={val1_Y}
+                            onChange={(e) => setVal1_Y(e.target.value)}
+                            placeholder="50000"
+                        />
+                        <span>의</span>
                         <input
                             type="number"
                             value={val1_X}
                             onChange={(e) => setVal1_X(e.target.value)}
                             placeholder="20"
                         />
-                        <span>% of</span>
-                        <input
-                            type="number"
-                            value={val1_Y}
-                            onChange={(e) => setVal1_Y(e.target.value)}
-                            placeholder="10000"
-                        />
+                        <span>% 는?</span>
                     </div>
                     <div className={styles.result}>
                         = <span className={styles.highlight}>{calc1()}</span>
@@ -67,22 +67,23 @@ export default function PercentageClient() {
 
             {/* Mode 2 */}
             <div className={`${styles.card} glass-panel`}>
-                <h3>Percentage Ratio</h3>
+                <h3>비율(%) 계산 (성적, 달성률)</h3>
                 <div className={styles.calcRow}>
                     <div className={styles.inputWrapper}>
                         <input
                             type="number"
-                            value={val2_X}
-                            onChange={(e) => setVal2_X(e.target.value)}
-                            placeholder="50"
-                        />
-                        <span>is what % of</span>
-                        <input
-                            type="number"
                             value={val2_Y}
                             onChange={(e) => setVal2_Y(e.target.value)}
-                            placeholder="200"
+                            placeholder="전체값 (100)"
                         />
+                        <span>중에서</span>
+                        <input
+                            type="number"
+                            value={val2_X}
+                            onChange={(e) => setVal2_X(e.target.value)}
+                            placeholder="일부값 (25)"
+                        />
+                        <span>은(는) 몇 %?</span>
                     </div>
                     <div className={styles.result}>
                         = <span className={styles.highlight}>{calc2()}%</span>
@@ -92,23 +93,24 @@ export default function PercentageClient() {
 
             {/* Mode 3 */}
             <div className={`${styles.card} glass-panel`}>
-                <h3>Percentage Change</h3>
+                <h3>증감율 계산 (수익률, 연봉 인상)</h3>
                 <div className={styles.calcRow}>
                     <div className={styles.inputWrapper}>
-                        <span>From</span>
+                        <span>기존</span>
                         <input
                             type="number"
                             value={val3_X}
                             onChange={(e) => setVal3_X(e.target.value)}
-                            placeholder="100"
+                            placeholder="1000"
                         />
-                        <span>to</span>
+                        <span>에서</span>
                         <input
                             type="number"
                             value={val3_Y}
                             onChange={(e) => setVal3_Y(e.target.value)}
-                            placeholder="150"
+                            placeholder="1500"
                         />
+                        <span>(으)로 변하면?</span>
                     </div>
                     <div className={styles.result}>
                         = <span className={styles.highlight}>{calc3()}%</span>

@@ -53,9 +53,11 @@ export default function FastingClient() {
     const toggleFasting = () => {
         if (isFasting) {
             // End Fasting
-            setIsFasting(false);
-            setStartTime(null);
-            localStorage.removeItem('fastingStartTime');
+            if (confirm('단식을 종료하시겠습니까?')) {
+                setIsFasting(false);
+                setStartTime(null);
+                localStorage.removeItem('fastingStartTime');
+            }
         } else {
             // Start Fasting
             const now = Date.now();
@@ -68,8 +70,8 @@ export default function FastingClient() {
     return (
         <div className={styles.container}>
             <div className={styles.card}>
-                <h1 className={styles.title}>Intermittent Fasting Tracker</h1>
-                <p className={styles.subtitle}>16:8 Timer</p>
+                <h1 className={styles.title}>간헐적 단식 타이머</h1>
+                <p className={styles.subtitle}>16:8 패턴 (16시간 공복)</p>
 
                 <div className={styles.timerContainer}>
                     {/* Circular Progress Background */}
@@ -92,12 +94,12 @@ export default function FastingClient() {
                         </svg>
                         <div className={styles.timerContent}>
                             <span className={styles.statusLabel}>
-                                {isFasting ? 'FASTING TIME' : 'EATING WINDOW'}
+                                {isFasting ? '단식 시간 (공복)' : '식사 가능 시간'}
                             </span>
                             <div className={styles.timeDisplay}>{elapsed}</div>
                             {isFasting && (
                                 <span className={styles.goalLabel}>
-                                    Goal: 16 Hours
+                                    목표: 16시간
                                 </span>
                             )}
                         </div>
@@ -108,18 +110,18 @@ export default function FastingClient() {
                     className={`${styles.toggleBtn} ${isFasting ? styles.active : ''}`}
                     onClick={toggleFasting}
                 >
-                    {isFasting ? 'END FASTING' : 'START FASTING'}
+                    {isFasting ? '단식 종료하기' : '단식 시작하기'}
                 </button>
 
                 <div className={styles.stats}>
                     <div className={styles.statItem}>
-                        <span className={styles.statLabel}>Started</span>
+                        <span className={styles.statLabel}>시작 시간</span>
                         <span className={styles.statValue}>
                             {startTime ? new Date(startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '--:--'}
                         </span>
                     </div>
                     <div className={styles.statItem}>
-                        <span className={styles.statLabel}>Goal End</span>
+                        <span className={styles.statLabel}>종료 예정</span>
                         <span className={styles.statValue}>
                             {startTime ? new Date(startTime + (16 * 60 * 60 * 1000)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '--:--'}
                         </span>

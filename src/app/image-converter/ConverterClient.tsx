@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import styles from './page.module.css';
 
 export default function ConverterClient() {
@@ -67,11 +67,11 @@ export default function ConverterClient() {
                 />
                 <label htmlFor="webp-upload" className={styles.uploadLabel}>
                     {selectedImage ? (
-                        <img src={selectedImage} alt="Preview" className={styles.previewImage} />
+                        <img src={selectedImage} alt="미리보기" className={styles.previewImage} />
                     ) : (
                         <div className={styles.uploadPlaceholder}>
-                            <span>Click to Upload JPG/PNG</span>
-                            <span className={styles.subText}>Drag & Drop supported</span>
+                            <span>이미지 업로드 (JPG/PNG)</span>
+                            <span className={styles.subText}>클릭 또는 드래그 앤 드롭</span>
                         </div>
                     )}
                 </label>
@@ -81,19 +81,20 @@ export default function ConverterClient() {
                 <div className={`${styles.resultCard} glass-panel`}>
                     <div className={styles.comparison}>
                         <div className={styles.stat}>
-                            <span className={styles.label}>Original</span>
+                            <span className={styles.label}>원본 용량</span>
                             <span className={styles.value}>{originalSize}</span>
                         </div>
                         <div className={styles.arrow}>→</div>
                         <div className={styles.stat}>
-                            <span className={styles.label}>WebP</span>
+                            <span className={styles.label}>WebP 용량</span>
                             <span className={styles.value}>{convertedSize}</span>
                         </div>
                     </div>
 
                     <button onClick={downloadWebP} className={styles.downloadBtn}>
-                        Download WebP
+                        WebP 다운로드
                     </button>
+                    <p className={styles.guideText}>* 이미지가 브라우저에서 바로 변환되었습니다.</p>
                 </div>
             )}
         </div>

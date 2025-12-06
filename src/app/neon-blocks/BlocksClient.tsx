@@ -163,7 +163,6 @@ export default function BlocksClient() {
     // Render helper
     const renderCell = (x: number, y: number) => {
         let color = board[y][x];
-        let isGhost = false;
 
         // Render active piece
         if (currentPiece) {
@@ -197,17 +196,17 @@ export default function BlocksClient() {
 
                 <div className={styles.sidebar}>
                     <div className={styles.panel}>
-                        <div className={styles.panelTitle}>Score</div>
-                        <div className={styles.score}>{score}</div>
+                        <div className={styles.panelTitle}>점수 (Score)</div>
+                        <div className={styles.score}>{score.toLocaleString()}</div>
                     </div>
 
                     <div className={styles.panel}>
-                        <div className={styles.panelTitle}>Level</div>
+                        <div className={styles.panelTitle}>레벨 (Level)</div>
                         <div className={styles.score}>{level}</div>
                     </div>
 
                     <div className={styles.panel}>
-                        <div className={styles.panelTitle}>Next</div>
+                        <div className={styles.panelTitle}>다음 블록</div>
                         <div className={styles.nextPiece}>
                             {nextPiece && nextPiece.shape.map((row, r) => (
                                 row.map((val, c) => (
@@ -222,7 +221,7 @@ export default function BlocksClient() {
 
                     {!isPlaying && (
                         <button className={styles.startBtn} onClick={startGame}>
-                            {gameOver ? 'Try Again' : 'Start Game'}
+                            {gameOver ? '다시 도전!' : '게임 시작'}
                         </button>
                     )}
 
@@ -247,9 +246,9 @@ export default function BlocksClient() {
             {gameOver && (
                 <div className={styles.gameOver}>
                     <h2 style={{ color: '#ff0055', fontSize: '2rem' }}>GAME OVER</h2>
-                    <p style={{ color: '#fff', fontSize: '1.5rem' }}>Score: {score}</p>
+                    <p style={{ color: '#fff', fontSize: '1.5rem' }}>최종 점수: {score.toLocaleString()}</p>
                     <button className={styles.startBtn} onClick={startGame} style={{ marginTop: '1rem' }}>
-                        Replay
+                        다시 하기
                     </button>
                 </div>
             )}

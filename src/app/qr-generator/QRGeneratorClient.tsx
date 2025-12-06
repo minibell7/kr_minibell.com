@@ -43,22 +43,28 @@ export default function QRGeneratorClient() {
                     type="text"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
-                    placeholder="https://example.com"
+                    placeholder="https://를 포함한 주소나 텍스트 입력"
                     className={styles.input}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') generateQR();
+                    }}
                 />
                 <button onClick={generateQR} className={styles.generateBtn}>
-                    Generate
+                    QR 생성하기
                 </button>
             </div>
 
             {qrCode && (
                 <div className={`${styles.resultCard} glass-panel`}>
                     <div className={styles.qrPreview}>
-                        <img src={qrCode} alt="QR Code" />
+                        <img src={qrCode} alt="생성된 QR 코드" />
                     </div>
                     <button onClick={handleDownload} className={styles.downloadBtn}>
-                        Download PNG
+                        이미지 다운로드 (PNG)
                     </button>
+                    <p className={styles.guideText}>
+                        * 다운로드 후 카메라로 스캔하여 테스트해보세요.
+                    </p>
                 </div>
             )}
         </div>

@@ -8,6 +8,7 @@ export default function ThumbnailClient() {
     const [videoId, setVideoId] = useState<string | null>(null);
 
     const extractVideoId = (inputUrl: string) => {
+        // Support various YouTube URL formats (standard, short, embed)
         const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
         const match = inputUrl.match(regExp);
         return (match && match[7].length === 11) ? match[7] : null;
@@ -18,7 +19,7 @@ export default function ThumbnailClient() {
         if (id) {
             setVideoId(id);
         } else {
-            alert('Invalid YouTube URL');
+            alert('올바른 유튜브 주소(URL)를 입력해주세요.');
         }
     };
 
@@ -34,7 +35,7 @@ export default function ThumbnailClient() {
             document.body.removeChild(link);
         } catch (error) {
             console.error('Download failed:', error);
-            // Fallback for cross-origin issues if direct download fails
+            // Fallback
             window.open(imageUrl, '_blank');
         }
     };
@@ -46,18 +47,21 @@ export default function ThumbnailClient() {
                     type="text"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
-                    placeholder="Paste YouTube URL here (e.g., https://youtu.be/...)"
+                    placeholder="여기에 유튜브 주소를 붙여넣으세요 (예: https://youtu.be/...)"
                     className={styles.input}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') handleGenerate();
+                    }}
                 />
                 <button onClick={handleGenerate} className={styles.generateBtn}>
-                    Get Thumbnails
+                    썸네일 추출
                 </button>
             </div>
 
             {videoId && (
                 <div className={styles.results}>
                     <div className={`${styles.resultCard} glass-panel`}>
-                        <h3>Max Resolution (HD)</h3>
+                        <h3>최대 해상도 (HD / 1280x720)</h3>
                         <img
                             src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                             alt="Max Resolution"
@@ -66,12 +70,12 @@ export default function ThumbnailClient() {
                             onClick={() => downloadImage(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`, 'maxres')}
                             className={styles.downloadBtn}
                         >
-                            Download HD
+                            HD 다운로드
                         </button>
                     </div>
 
                     <div className={`${styles.resultCard} glass-panel`}>
-                        <h3>Standard Quality</h3>
+                        <h3>표준 화질 (SD / 640x480)</h3>
                         <img
                             src={`https://img.youtube.com/vi/${videoId}/sddefault.jpg`}
                             alt="Standard Quality"
@@ -80,7 +84,7 @@ export default function ThumbnailClient() {
                             onClick={() => downloadImage(`https://img.youtube.com/vi/${videoId}/sddefault.jpg`, 'sd')}
                             className={styles.downloadBtn}
                         >
-                            Download SD
+                            SD 다운로드
                         </button>
                     </div>
                 </div>

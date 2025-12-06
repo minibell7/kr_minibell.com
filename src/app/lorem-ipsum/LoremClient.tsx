@@ -56,7 +56,7 @@ export default function LoremClient() {
         <div className={`${styles.card} glass-panel`}>
             <div className={styles.controls}>
                 <div className={styles.inputGroup}>
-                    <label>Count</label>
+                    <label>길이 (Count)</label>
                     <input
                         type="number"
                         min="1"
@@ -67,7 +67,7 @@ export default function LoremClient() {
                     />
                 </div>
                 <div className={styles.inputGroup}>
-                    <label>Type</label>
+                    <label>단위 (Type)</label>
                     <div className={styles.radioGroup}>
                         <label className={`${styles.radioLabel} ${type === 'paragraphs' ? styles.active : ''}`}>
                             <input
@@ -75,7 +75,7 @@ export default function LoremClient() {
                                 checked={type === 'paragraphs'}
                                 onChange={() => setType('paragraphs')}
                             />
-                            Paragraphs
+                            문단 (Paragraphs)
                         </label>
                         <label className={`${styles.radioLabel} ${type === 'words' ? styles.active : ''}`}>
                             <input
@@ -83,12 +83,12 @@ export default function LoremClient() {
                                 checked={type === 'words'}
                                 onChange={() => setType('words')}
                             />
-                            Words
+                            단어 (Words)
                         </label>
                     </div>
                 </div>
                 <button className={styles.generateButton} onClick={generateLorem}>
-                    Generate
+                    텍스트 생성
                 </button>
             </div>
 
@@ -102,7 +102,7 @@ export default function LoremClient() {
                     className={`${styles.copyButton} ${copied ? styles.copied : ''}`}
                     onClick={copyToClipboard}
                 >
-                    {copied ? 'Copied!' : 'Copy to Clipboard'}
+                    {copied ? '복사 완료!' : '복사하기'}
                 </button>
             </div>
         </div>

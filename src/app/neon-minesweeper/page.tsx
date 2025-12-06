@@ -1,12 +1,17 @@
 import MinesweeperClient from './MinesweeperClient';
 import { Metadata } from 'next';
+import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'Neon Minesweeper - mini-bell.com',
-    description: 'Classic Minesweeper with a Cyberpunk Neon twist.',
+    title: '네온 지뢰찾기 | 클래식 두뇌 퍼즐 게임',
+    description: '윈도우 기본 게임으로 유명한 지뢰찾기를 네온 스타일로 즐기세요. 논리와 추리력을 발휘해 지뢰를 피하고 모든 칸을 여세요.',
+    keywords: ['지뢰찾기', '마인스위퍼', '고전게임', '두뇌게임', '퍼즐게임', '무료웹게임'],
+    openGraph: {
+        title: '네온 지뢰찾기 | 미니벨 아케이드',
+        description: '지뢰를 피해 모든 칸을 열 수 있을까요? 당신의 두뇌를 시험해보세요.',
+        type: 'website',
+    }
 };
-
-import styles from './page.module.css';
 
 export default function MinesweeperPage() {
     return (
@@ -14,41 +19,31 @@ export default function MinesweeperPage() {
             <MinesweeperClient />
 
             <section className={styles.seoSection}>
-                <h2>About Neon Minesweeper</h2>
+                <h2>네온 지뢰찾기(Minesweeper) 소개</h2>
                 <p>
-                    <strong>Neon Minesweeper</strong> brings the classic logic puzzle into the future. Originally popularized as a standard tool on early operating systems, Minesweeper has frustrated and delighted players for decades. Our version retains the core mechanics—deducing the location of hidden mines—but wraps it in a sleek, dark-mode interface with neon accents.
-                </p>
-                <p>
-                    It's a game of pure logic and probability. One wrong click, and it's game over. Do you have the patience and the brainpower to clear the board?
+                    <strong>네온 지뢰찾기</strong>는 과거 윈도우 PC의 기본 게임으로 사랑받았던 지뢰찾기를 현대적인 감각으로 재해석한 것입니다. 숫자를 단서로 숨겨진 지뢰의 위치를 찾아내는 팽팽한 긴장감을 느껴보세요.
                 </p>
 
-                <h2>How to Play</h2>
+                <h2>게임 방법</h2>
                 <ul>
-                    <li><strong>The Objective:</strong> Clear the entire board without detonating any mines.</li>
-                    <li><strong>The Numbers:</strong> Clicking a safe square reveals a number. This number tells you exactly how many mines are touching that square (horizontally, vertically, or diagonally).</li>
-                    <li><strong>Flagging:</strong> If you suspect a square contains a mine, right-click (or long-press on mobile) to place a flag. This prevents you from accidentally clicking it.</li>
-                    <li><strong>Winning:</strong> You win when all safe squares are revealed.</li>
+                    <li><strong>목표:</strong> 지뢰가 없는 안전한 칸을 모두 열어야 합니다. 하나라도 지뢰를 건드리면 게임 오버!</li>
+                    <li><strong>숫자의 의미:</strong> 칸을 열었을 때 나오는 숫자는 해당 칸을 둘러싼 8개의 칸(가로, 세로, 대각선)에 들어있는 **지뢰의 개수**입니다.</li>
+                    <li><strong>깃발 꽂기:</strong> 지뢰가 확실해 보이는 곳은 우클릭(모바일은 길게 터치)하여 깃발을 꽂아 표시하세요.</li>
                 </ul>
 
-                <h2>Difficulty Levels</h2>
+                <h2>난이도 안내</h2>
                 <ul>
-                    <li><strong>Easy:</strong> A small grid with fewer mines. Perfect for beginners learning the patterns.</li>
-                    <li><strong>Medium:</strong> A larger grid with a moderate density of mines. A balanced challenge.</li>
-                    <li><strong>Hard:</strong> A large grid packed with mines. Only for the experts!</li>
+                    <li><strong>초급(Easy):</strong> 9x9 행렬에 지뢰 10개. 가볍게 몸풀기용.</li>
+                    <li><strong>중급(Medium):</strong> 16x16 행렬에 지뢰 40개. 본격적인 두뇌 싸움.</li>
+                    <li><strong>고급(Hard):</strong> 30x16 행렬에 지뢰 99개. 극한의 난이도!</li>
                 </ul>
 
-                <h2>Strategy Guide</h2>
+                <h2>공략 팁</h2>
                 <ul>
-                    <li><strong>Start in the Middle:</strong> The corners are often tricky. Starting in the center usually opens up a larger safe area.</li>
-                    <li><strong>The "1-2-1" Pattern:</strong> If you see a 1-2-1 pattern along a straight edge, the two 1s always have mines next to them, and the 2 shares those mines.</li>
-                    <li><strong>The "1-2-2-1" Pattern:</strong> Similar to above, this often indicates a specific mine placement. Learning these patterns is key to speed.</li>
-                    <li><strong>Guessing:</strong> Sometimes, you will be forced to guess. Try to calculate the probability based on the remaining mines and covered squares.</li>
+                    <li><strong>가운데부터 공략:</strong> 모서리보다는 중앙을 먼저 여는 것이 확률적으로 안전한 영역을 넓힐 가능성이 큽니다.</li>
+                    <li><strong>1-2-1 패턴:</strong> 일직선상에 1-2-1이 보인다면 양쪽 1 옆에는 반드시 지뢰가 있습니다. 이러한 패턴을 익히면 속도가 빨라집니다.</li>
+                    <li><strong>찍기(운):</strong> 논리적으로 알 수 없는 상황이 오면 확률을 계산해 과감하게 찍어야 할 수도 있습니다. 행운을 빕니다!</li>
                 </ul>
-
-                <h2>Why Play Minesweeper?</h2>
-                <p>
-                    Minesweeper is an excellent exercise for logical reasoning and pattern recognition. It trains your brain to process information quickly and make decisions based on evidence. It's the perfect "brain break" during a busy day.
-                </p>
             </section>
         </div>
     );

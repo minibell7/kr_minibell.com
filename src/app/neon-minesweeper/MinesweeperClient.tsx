@@ -74,6 +74,15 @@ export default function MinesweeperClient() {
         return `${styles.cell} ${styles.revealed} ${styles['val' + cell.neighborMines]}`;
     };
 
+    const getDiffName = (diff: string) => {
+        switch (diff) {
+            case 'EASY': return '초급';
+            case 'MEDIUM': return '중급';
+            case 'HARD': return '상급';
+            default: return diff;
+        }
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -85,7 +94,7 @@ export default function MinesweeperClient() {
                             className={`${styles.difficultyBtn} ${difficulty === diff ? styles.active : ''}`}
                             onClick={() => setDifficulty(diff)}
                         >
-                            {diff}
+                            {getDiffName(diff)}
                         </button>
                     ))}
                 </div>
@@ -122,11 +131,20 @@ export default function MinesweeperClient() {
             </div>
             {gameState === 'won' && (
                 <div className={styles.victoryOverlay}>
-                    <h2 className={styles.victoryTitle}>Mission Cleared!</h2>
+                    <h2 className={styles.victoryTitle}>미션 성공!</h2>
                     <span className={styles.victoryEmoji}>💐</span>
-                    <p style={{ color: '#fff', marginBottom: '1rem' }}>Time: {timer}s</p>
+                    <p style={{ color: '#fff', marginBottom: '1rem' }}>기록: {timer}초</p>
                     <button className={styles.restartBtn} onClick={() => initGame(difficulty)}>
-                        Play Again
+                        다시 하기
+                    </button>
+                </div>
+            )}
+            {gameState === 'lost' && (
+                <div className={styles.victoryOverlay} style={{ background: 'rgba(50,0,0,0.9)' }}>
+                    <h2 className={styles.victoryTitle} style={{ color: '#ff3333' }}>폭발했습니다!</h2>
+                    <span className={styles.victoryEmoji}>💥</span>
+                    <button className={styles.restartBtn} onClick={() => initGame(difficulty)}>
+                        재도전
                     </button>
                 </div>
             )}

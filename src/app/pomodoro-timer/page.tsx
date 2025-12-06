@@ -3,12 +3,12 @@ import styles from './page.module.css';
 import PomodoroClient from './PomodoroClient';
 
 export const metadata: Metadata = {
-    title: 'Pomodoro Timer | Focus & Study Timer',
-    description: 'Boost your productivity with this free online Pomodoro Timer. 25 minutes work, 5 minutes break. Simple, effective, and distraction-free.',
-    keywords: ['pomodoro timer', 'study timer', 'focus timer', 'tomato timer', 'productivity tool', 'online timer'],
+    title: '무료 뽀모도로 타이머 | 집중력 향상 공부 타이머 (25분)',
+    description: '25분 집중, 5분 휴식! 뽀모도로 기법을 활용한 무료 온라인 타이머입니다. 공부, 업무, 코딩 등 집중력이 필요할 때 루틴을 만들어보세요. 알림음 제공.',
+    keywords: ['뽀모도로타이머', '공부타이머', '집중력타이머', '토마토타이머', '온라인타이머', '시간관리', '스터디타이머'],
     openGraph: {
-        title: 'Pomodoro Timer | minibell.com',
-        description: 'Stay focused with the Pomodoro technique.',
+        title: '무료 뽀모도로 타이머 | 미니벨 유틸리티',
+        description: '25분 집중, 5분 휴식. 뽀모도로 타이머로 생산성을 높이세요.',
         type: 'website',
     }
 };
@@ -16,51 +16,43 @@ export const metadata: Metadata = {
 export default function PomodoroPage() {
     return (
         <div className={styles.pageWrapper}>
-            <h1 className={styles.title}>Pomodoro Timer</h1>
+            <h1 className={styles.title}>뽀모도로 집중 타이머</h1>
             <p className={styles.description}>
-                Stay focused and productive with the Pomodoro technique.
+                25분 집중하고 5분 쉬는 뽀모도로 기법으로 효율적인 하루를 만드세요.
             </p>
 
             <PomodoroClient />
 
             <section className={styles.seoSection}>
-                <h2>What is the Pomodoro Technique?</h2>
+                <h2>뽀모도로 기법이란?</h2>
                 <p>
-                    In an era of constant notifications and multitasking, maintaining focus is harder than ever. The <strong>Pomodoro Technique</strong> is a time management method developed by Francesco Cirillo in the late 1980s that turns time into a valuable ally rather than an enemy. It uses a timer to break work into focused intervals, traditionally 25 minutes in length, separated by short breaks.
-                </p>
-                <p>
-                    Our <strong>Free Online Pomodoro Timer</strong> is designed to help you implement this technique effortlessly. Whether you are studying for an exam, coding a new feature, or writing a report, this tool will help you stay on track and avoid burnout.
+                    <strong>뽀모도로(Pomodoro) 기법</strong>은 1980년대 후반 프란체스코 시릴로가 제안한 시간 관리 방법론으로, 타이머를 이용해 25분간 집중해서 일하고 5분간 쉬는 주기를 반복하는 것입니다. '뽀모도로'는 이탈리아어로 토마토를 뜻하는데, 시릴로가 토마토 모양의 요리용 타이머를 사용한 데서 유래했습니다.
                 </p>
 
-                <h2>How to Use This Timer</h2>
-                <ol>
-                    <li><strong>Choose a Task:</strong> Pick one specific thing you want to accomplish.</li>
-                    <li><strong>Start the Timer:</strong> Click "Start" to begin a 25-minute work session (a "Pomodoro"). Focus only on the task.</li>
-                    <li><strong>Work Until It Rings:</strong> Ignore distractions. If a thought pops up, write it down and get back to work.</li>
-                    <li><strong>Take a Short Break:</strong> When the timer ends, take a 5-minute break. Stretch, walk around, or grab a drink.</li>
-                    <li><strong>Repeat:</strong> After 4 Pomodoros, take a longer break (15-30 minutes) to recharge your brain.</li>
-                </ol>
-
-                <h2>Why It Works</h2>
+                <h2>왜 효과적일까요?</h2>
                 <ul>
-                    <li><strong>Combats Procrastination:</strong> Starting a task is often the hardest part. Committing to just 25 minutes feels manageable.</li>
-                    <li><strong>Prevents Burnout:</strong> Regular breaks keep your mind fresh and prevent mental fatigue.</li>
-                    <li><strong>Improves Focus:</strong> Knowing the clock is ticking creates a sense of urgency that sharpens concentration.</li>
+                    <li><strong>미루는 습관 타파:</strong> "딱 25분만 하자"는 마음가짐은 거대한 작업에 대한 부담감을 줄여주어 시작하기 쉽게 만듭니다.</li>
+                    <li><strong>번아웃 방지:</strong> 주기적인 휴식은 뇌의 피로를 풀어주어 장시간 작업에도 지치지 않게 도와줍니다.</li>
+                    <li><strong>집중력 강화:</strong> 타이머가 돌아가는 동안은 오직 한 가지 일에만 몰입하게 되어 생산성이 폭발적으로 증가합니다.</li>
                 </ul>
 
-                <h2>FAQ</h2>
+                <h2>사용 방법</h2>
+                <ol>
+                    <li><strong>집중 (25분):</strong> '시작' 버튼을 누르고 25분 동안은 스마트폰도 보지 말고 오직 할 일에만 집중하세요.</li>
+                    <li><strong>알림:</strong> 시간이 다 되면 알림이 울립니다. 하던 일을 멈추세요.</li>
+                    <li><strong>휴식 (5분):</strong> '휴식' 버튼을 누르고 5분간 스트레칭을 하거나 물을 마시며 뇌를 쉬게 하세요.</li>
+                    <li><strong>반복:</strong> 4세트(약 2시간)를 반복한 후에는 15~30분 정도 길게 휴식하는 것이 좋습니다.</li>
+                </ol>
+
+                <h2>자주 묻는 질문 (FAQ)</h2>
                 <div className={styles.faqList}>
                     <div className={styles.faqItem}>
-                        <h3>Q. Why 25 minutes?</h3>
-                        <p>A. 25 minutes is considered the "sweet spot" for sustained focus. It's long enough to get deep work done but short enough to delay gratification. However, you can adjust the intervals if you find a different rhythm works better for you.</p>
+                        <h3>Q. 꼭 25분이어야 하나요?</h3>
+                        <p>A. 25분이 표준이지만, 자신의 스타일에 맞게 30분, 50분 등 집중 시간을 늘려도 좋습니다. 핵심은 '집중'과 '휴식'을 분리하는 것입니다.</p>
                     </div>
                     <div className={styles.faqItem}>
-                        <h3>Q. What should I do during the break?</h3>
-                        <p>A. Step away from your screen! The goal is to disconnect. Do some light stretching, look out a window, or meditate. Avoid checking social media or email, as this uses the same mental resources as work.</p>
-                    </div>
-                    <div className={styles.faqItem}>
-                        <h3>Q. Is this timer customizable?</h3>
-                        <p>A. Yes! You can adjust the work duration, short break, and long break times in the settings to fit your personal workflow.</p>
+                        <h3>Q. 알림 소리가 나나요?</h3>
+                        <p>A. 네, 타이머가 종료되면 짧은 알림음이 재생됩니다. (브라우저 정책상 소리 자동 재생이 차단된 경우, 화면 터치 후 다시 시도해주세요.)</p>
                     </div>
                 </div>
             </section>

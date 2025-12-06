@@ -3,12 +3,12 @@ import styles from './page.module.css';
 import FortuneClient from './FortuneClient';
 
 export const metadata: Metadata = {
-    title: 'Digital Fortune Cookie | Daily Wisdom & Luck',
-    description: 'Open your daily fortune cookie online. Get instant wisdom, motivation, and lucky numbers. Free and fun!',
-    keywords: ['fortune cookie', 'online fortune', 'daily wisdom', 'lucky message', 'fortune teller'],
+    title: '디지털 포춘쿠키 | 오늘의 무료 운세 & 행운의 메시지',
+    description: '바삭한 포춘쿠키를 깨서 오늘의 운세와 조언을 확인해보세요. 매일매일 새로운 희망과 동기부여 메시지가 당신을 기다립니다.',
+    keywords: ['포춘쿠키', '오늘의운세', '무료운세', '행운의메시지', '명언', '조언'],
     openGraph: {
-        title: 'Digital Fortune Cookie | minibell.com',
-        description: 'Crack open a cookie and see what the future holds!',
+        title: '디지털 포춘쿠키 | 미니벨 유틸리티',
+        description: '오늘 당신에게 찾아온 행운의 메시지를 확인하세요!',
         type: 'website',
     }
 };
@@ -16,41 +16,36 @@ export const metadata: Metadata = {
 export default function FortuneCookiePage() {
     return (
         <div className={styles.pageWrapper}>
-            <h1 className={styles.title}>Digital Fortune Cookie</h1>
+            <h1 className={styles.title}>디지털 포춘쿠키</h1>
             <p className={styles.description}>
-                Crack open a cookie to reveal your daily fortune.
+                쿠키를 클릭해서 오늘의 행운 메시지를 확인해보세요.
             </p>
 
             <FortuneClient />
 
             <section className={styles.seoSection}>
-                <h2>The Magic of the Fortune Cookie</h2>
+                <h2>포춘쿠키의 유래</h2>
                 <p>
-                    There is something undeniably fun and mysterious about cracking open a fortune cookie. It's not just a sweet treat; it's a moment of anticipation. Will you get a prediction about your future? A piece of sage advice? Or a set of lucky numbers? Our <strong>Digital Fortune Cookie</strong> brings this experience to your screen, allowing you to get your daily dose of wisdom anytime, anywhere.
-                </p>
-                <p>
-                    Whether you are looking for a sign, a bit of motivation to start your day, or just a fun diversion, our virtual cookies are fresh and ready to be opened.
+                    바삭한 과자 속에 점괘가 적힌 종이(Fortune slip)가 들어있는 <strong>포춘쿠키</strong>는 주로 미국 중식당에서 후식으로 제공되면서 전 세계적으로 유명해졌습니다. 그 기원에 대해서는 19세기 일본의 사찰에서 팔던 과자에서 유래했다는 설과 중국계 미국 이민자들이 만들었다는 설 등 다양한 이야기가 있습니다.
                 </p>
 
-                <h2>A Brief History</h2>
+                <h2>왜 오늘의 운세를 볼까요?</h2>
                 <p>
-                    While often associated with Chinese restaurants in the West, the fortune cookie's origins are actually debated. Many researchers trace them back to 19th-century Japan, where a similar cracker called "tsujiura senbei" was sold at temples with fortunes tucked inside. They were popularized in the United States by Japanese and Chinese immigrants in California in the early 20th century and have since become a global phenomenon.
+                    포춘쿠키 속 메시지는 때로는 따뜻한 위로를, 때로는 따끔한 충고를, 그리고 때로는 알 수 없는 신비로운 예언을 전해줍니다.
                 </p>
-
-                <h2>How to Use This Oracle</h2>
-                <ol>
-                    <li><strong>Clear Your Mind:</strong> Take a deep breath. Focus on a question you have or simply ask the universe for guidance.</li>
-                    <li><strong>Crack the Cookie:</strong> Click or tap the cookie on the screen.</li>
-                    <li><strong>Receive Your Message:</strong> Read the fortune that appears. Reflect on how it applies to your current situation.</li>
-                    <li><strong>Check Your Lucky Numbers:</strong> Use them for your next lottery ticket or as a guide for important dates.</li>
-                </ol>
-
-                <h2>Why Play Daily?</h2>
                 <ul>
-                    <li><strong>Positive Mindset:</strong> Starting your day with an uplifting message can improve your mood and outlook.</li>
-                    <li><strong>Mindfulness:</strong> It takes a moment to pause and reflect, which is a small act of mindfulness in a busy day.</li>
-                    <li><strong>Fun & Shareable:</strong> Share your fortune with friends or on social media to spread the good vibes.</li>
+                    <li><strong>긍정의 힘:</strong> 하루를 시작할 때 긍정적인 메시지를 읽으면 무의식적으로 좋은 일이 일어날 것 같은 기분을 느낄 수 있습니다. (플라시보 효과)</li>
+                    <li><strong>잠깐의 휴식:</strong> 바쁜 일상 속에서 쿠키를 깨는 짧은 순간이나마 여유와 재미를 느낄 수 있습니다.</li>
+                    <li><strong>고민 해결의 실마리:</strong> 고민이 있을 때 우연히 마주친 문장이 의외의 해결책이나 영감을 주기도 합니다.</li>
                 </ul>
+
+                <h2>사용 팁</h2>
+                <ol>
+                    <li>마음속으로 고민이나 바라는 점을 떠올리세요.</li>
+                    <li>화면의 쿠키를 클릭(터치)하세요.</li>
+                    <li>나타난 메시지를 읽고 오늘 하루 마음속에 간직해보세요.</li>
+                    <li>친구들에게 공유해서 행운을 나눠보세요!</li>
+                </ol>
             </section>
         </div>
     );

@@ -46,34 +46,34 @@ export default function LoanClient() {
     return (
         <div className={`${styles.card} glass-panel`}>
             <div className={styles.inputGroup}>
-                <label>Loan Amount ($)</label>
+                <label>대출 원금 (원)</label>
                 <input
                     type="number"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    placeholder="20000"
+                    placeholder="예: 20000000 (2천만원)"
                     className={styles.input}
                 />
             </div>
 
             <div className={styles.row}>
                 <div className={styles.inputGroup}>
-                    <label>Interest Rate (%)</label>
+                    <label>연 이자율 (%)</label>
                     <input
                         type="number"
                         value={rate}
                         onChange={(e) => setRate(e.target.value)}
-                        placeholder="5.5"
+                        placeholder="예: 4.5"
                         className={styles.input}
                     />
                 </div>
                 <div className={styles.inputGroup}>
-                    <label>Loan Term (Years)</label>
+                    <label>대출 기간 (년)</label>
                     <input
                         type="number"
                         value={years}
                         onChange={(e) => setYears(e.target.value)}
-                        placeholder="5"
+                        placeholder="예: 2"
                         className={styles.input}
                     />
                 </div>
@@ -81,22 +81,22 @@ export default function LoanClient() {
 
             <div className={styles.results}>
                 <div className={styles.mainResult}>
-                    <span>Monthly Payment</span>
+                    <span>월 예상 납입금</span>
                     <span className={styles.monthlyValue}>
-                        ${monthlyPayment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        {monthlyPayment.toLocaleString(undefined, { maximumFractionDigits: 0 })}원
                     </span>
                 </div>
                 <div className={styles.subResult}>
-                    <span>Total Principal</span>
-                    <span>${amount ? parseFloat(amount).toLocaleString() : '0'}</span>
+                    <span>원금 합계</span>
+                    <span>{amount ? parseFloat(amount).toLocaleString() : '0'}원</span>
                 </div>
                 <div className={styles.subResult}>
-                    <span>Total Interest</span>
-                    <span>${totalInterest.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    <span>총 이자 비용</span>
+                    <span>{totalInterest.toLocaleString(undefined, { maximumFractionDigits: 0 })}원</span>
                 </div>
                 <div className={`${styles.subResult} ${styles.totalRow}`}>
-                    <span>Total Cost</span>
-                    <span>${totalPayment.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                    <span>총 상환 금액</span>
+                    <span>{totalPayment.toLocaleString(undefined, { maximumFractionDigits: 0 })}원</span>
                 </div>
             </div>
         </div>

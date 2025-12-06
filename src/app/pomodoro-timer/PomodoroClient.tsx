@@ -39,7 +39,7 @@ export default function PomodoroClient() {
             // Play sound (simple beep)
             const audio = new Audio('https://actions.google.com/sounds/v1/alarms/beep_short.ogg');
             audio.play().catch(e => console.log('Audio play failed', e));
-            alert(mode === 'work' ? 'Work session finished! Take a break.' : 'Break finished! Back to work.');
+            alert(mode === 'work' ? '집중 시간 종료! 5분간 휴식하세요.' : '휴식 종료! 다시 집중해볼까요?');
         }
 
         return () => {
@@ -65,13 +65,13 @@ export default function PomodoroClient() {
                         className={`${styles.modeBtn} ${mode === 'work' ? styles.activeMode : ''}`}
                         onClick={() => switchMode('work')}
                     >
-                        Work (25m)
+                        집중 (25분)
                     </button>
                     <button
                         className={`${styles.modeBtn} ${mode === 'break' ? styles.activeMode : ''}`}
                         onClick={() => switchMode('break')}
                     >
-                        Break (5m)
+                        휴식 (5분)
                     </button>
                 </div>
 
@@ -84,13 +84,13 @@ export default function PomodoroClient() {
                         className={`${styles.controlBtn} ${isActive ? styles.pauseBtn : styles.startBtn}`}
                         onClick={toggleTimer}
                     >
-                        {isActive ? 'Pause' : 'Start'}
+                        {isActive ? '일시정지' : '시작'}
                     </button>
                     <button
                         className={styles.resetBtn}
                         onClick={resetTimer}
                     >
-                        Reset
+                        리셋
                     </button>
                 </div>
 

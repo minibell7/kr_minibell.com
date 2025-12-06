@@ -3,12 +3,12 @@ import styles from './page.module.css';
 import PasswordClient from './PasswordClient';
 
 export const metadata: Metadata = {
-    title: 'Strong Password Generator | Secure & Random',
-    description: 'Generate strong, secure, and random passwords instantly. Customize length and characters. Protect your accounts with high-entropy passwords.',
-    keywords: ['password generator', 'strong password', 'random password', 'secure password', 'password maker'],
+    title: '안전한 비밀번호 생성기 | 강력한 랜덤 암호 추천',
+    description: '해킹 불가능한 강력하고 복잡한 비밀번호를 즉시 생성하세요. 길이 설정, 특수문자 포함 여부를 선택하여 나만의 안전한 암호를 만들 수 있습니다.',
+    keywords: ['비밀번호생성기', '랜덤비밀번호', '안전한암호', '패스워드생성', '강력한비밀번호', '보안'],
     openGraph: {
-        title: 'Strong Password Generator | minibell.com',
-        description: 'Create secure passwords instantly.',
+        title: '안전한 비밀번호 생성기 | 미니벨 유틸리티',
+        description: '내 계정을 지키는 가장 쉬운 방법, 강력한 암호 만들기.',
         type: 'website',
     }
 };
@@ -16,50 +16,39 @@ export const metadata: Metadata = {
 export default function PasswordGeneratorPage() {
     return (
         <div className={styles.pageWrapper}>
-            <h1 className={styles.title}>Strong Password Generator</h1>
+            <h1 className={styles.title}>안전한 비밀번호 생성기</h1>
             <p className={styles.description}>
-                Create secure, random passwords to protect your digital life.
+                해킹 위험을 차단하는 강력하고 복잡한 랜덤 비밀번호를 생성합니다.
             </p>
 
             <PasswordClient />
 
             <section className={styles.seoSection}>
-                <h2>Why You Need a Strong Password</h2>
+                <h2>왜 복잡한 비밀번호가 필요한가요?</h2>
                 <p>
-                    In today's digital world, your password is the first line of defense against hackers and identity theft. Using weak passwords like "123456" or "password" is like leaving your front door unlocked. A <strong>Strong Password Generator</strong> creates complex, random combinations of characters that are nearly impossible for computers to guess or crack.
-                </p>
-                <p>
-                    Security experts recommend using a unique password for every single account. Our tool makes it easy to generate as many unique passwords as you need, instantly.
+                    "123456"이나 "password" 같은 쉬운 비밀번호는 해커들의 먹잇감이 되기 쉽습니다. **무차별 대입 공격(Brute Force Attack)**을 방어하려면 영문 대소문자, 숫자, 특수문자가 섞인 길고 복잡한 비밀번호를 사용해야 합니다.
                 </p>
 
-                <h2>What Makes a Password Strong?</h2>
+                <h2>안전한 비밀번호 만드는 법</h2>
                 <ul>
-                    <li><strong>Length:</strong> This is the most critical factor. A 12-character password is exponentially harder to crack than an 8-character one. We recommend at least 12-16 characters.</li>
-                    <li><strong>Complexity:</strong> Mixing uppercase letters, lowercase letters, numbers, and symbols increases the "entropy" (randomness) of your password.</li>
-                    <li><strong>Unpredictability:</strong> Avoid common words, phrases, or personal dates (like birthdays). Random strings are best.</li>
+                    <li><strong>길이가 생명:</strong> 비밀번호는 길수록 안전합니다. 보안 전문가들은 최소 12자리 이상을 권장합니다.</li>
+                    <li><strong>다양한 문자 혼합:</strong> 숫자, 기호, 대문자를 섞으면 경우의 수가 기하급수적으로 늘어나 해독이 어려워집니다.</li>
+                    <li><strong>유추 불가능성:</strong> 생일, 전화번호, 이름 등 개인정보가 포함된 암호는 피해야 합니다.</li>
                 </ul>
 
-                <h2>How to Use This Tool</h2>
-                <ol>
-                    <li><strong>Set Length:</strong> Use the slider to choose your desired password length (default is 12).</li>
-                    <li><strong>Select Options:</strong> Check the boxes to include Uppercase, Lowercase, Numbers, and Symbols.</li>
-                    <li><strong>Generate:</strong> Click the button to create a new random password.</li>
-                    <li><strong>Copy:</strong> Click the copy icon to save it to your clipboard.</li>
-                </ol>
-
-                <h2>FAQ</h2>
+                <h2>자주 묻는 질문 (FAQ)</h2>
                 <div className={styles.faqList}>
                     <div className={styles.faqItem}>
-                        <h3>Q. Is it safe to generate passwords online?</h3>
-                        <p>A. Yes, absolutely. This tool runs entirely in your browser (client-side). The passwords are generated locally on your device and are never sent to our servers. We cannot see or store them.</p>
+                        <h3>Q. 온라인에서 비밀번호를 만들어도 안전한가요?</h3>
+                        <p>A. 네, 100% 안전합니다. 이 도구는 **클라이언트(브라우저) 내부**에서만 작동하며, 생성된 비밀번호는 서버로 전송되거나 저장되지 않습니다. 오직 여러분만 볼 수 있습니다.</p>
                     </div>
                     <div className={styles.faqItem}>
-                        <h3>Q. How can I remember these complex passwords?</h3>
-                        <p>A. You shouldn't try to memorize them! We highly recommend using a Password Manager (like Bitwarden, 1Password, or LastPass) to store your unique passwords securely.</p>
+                        <h3>Q. 이렇게 복잡한 걸 어떻게 외우나요?</h3>
+                        <p>A. 외우려고 하지 마세요! <strong>비밀번호 관리자(Password Manager)</strong> 앱을 사용하여 안전하게 저장하는 것이 좋습니다. 모든 사이트마다 다른 비밀번호를 쓰는 것이 보안의 핵심입니다.</p>
                     </div>
                     <div className={styles.faqItem}>
-                        <h3>Q. Why are symbols important?</h3>
-                        <p>A. Adding symbols expands the set of possible characters, making "brute force" attacks (where hackers try every combination) take significantly longer.</p>
+                        <h3>Q. 특수문자가 왜 중요한가요?</h3>
+                        <p>A. 비밀번호의 '복잡도(Entropy)'를 높여주기 때문입니다. 같은 길이여도 특수문자가 섞이면 해킹 프로그램이 정답을 찾는 데 걸리는 시간이 몇천 배로 늘어납니다.</p>
                     </div>
                 </div>
             </section>

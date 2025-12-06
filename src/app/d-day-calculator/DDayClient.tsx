@@ -7,7 +7,7 @@ export default function DDayClient() {
     const [targetDate, setTargetDate] = useState('');
     const [title, setTitle] = useState('');
     const [result, setResult] = useState<{ days: number, type: 'past' | 'future' | 'today' } | null>(null);
-    const [isDay1, setIsDay1] = useState(false); // Default to Day 0 for US style
+    const [isDay1, setIsDay1] = useState(true); // Default to True for Korea (오늘부터 1일)
 
     const calculateDDay = () => {
         if (!targetDate) return;
@@ -24,16 +24,16 @@ export default function DDayClient() {
         if (diffDays === 0) {
             setResult({ days: isDay1 ? 1 : 0, type: 'today' });
         } else if (diffDays > 0) {
+            // Future: usually just "D-30" (Excluding today? Standard is excluding)
             setResult({ days: diffDays, type: 'future' });
         } else {
-            // Past date
-            // If "Today is Day 1", we include today in the count
+            // Past: "D+100"
+            // If "Day 1 included", we add 1 to abs diff
             const daysPassed = Math.abs(diffDays) + (isDay1 ? 1 : 0);
             setResult({ days: daysPassed, type: 'past' });
         }
     };
 
-    // Calculate on mount if date is set (optional) or just wait for user
     useEffect(() => {
         if (targetDate) calculateDDay();
     }, [targetDate, isDay1]);
@@ -42,21 +42,20 @@ export default function DDayClient() {
         <div className={styles.container}>
             <div className={`${styles.card} glass-panel`}>
                 <div className={styles.inputGroup}>
-                    <label className={styles.label}>Title (Optional)</label>
+                    <label className={styles.label}>제목 (선택)</label>
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        placeholder="e.g., My Birthday, Exam"
+                        placeholder="예: 수능, 여자친구 생일, 다이어트 시작"
                         className={styles.textInput}
                     />
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <label className={styles.label}>Target Date</label>
+                    <label className={styles.label}>날짜 선택</label>
                     <input
                         type="date"
-                        lang="en"
                         value={targetDate}
                         onChange={(e) => setTargetDate(e.target.value)}
                         className={styles.dateInput}
@@ -70,7 +69,7 @@ export default function DDayClient() {
                         checked={isDay1}
                         onChange={(e) => setIsDay1(e.target.checked)}
                     />
-                    <label htmlFor="day1">Include today as Day 1</label>
+                    <label htmlFor="day1">시작일을 1일로 포함 (오늘부터 1일)</label>
                 </div>
 
                 {/* Result Display */}
@@ -83,31 +82,35 @@ export default function DDayClient() {
                             {result.type === 'today' && `D-Day`}
                         </div>
                         <div className={styles.resultSub}>
-                            {result.type === 'future' && `${result.days} days left`}
-                            {result.type === 'past' && `${result.days} days passed`}
-                            {result.type === 'today' && `It's today!`}
+                            {result.type === 'future' && `${result.days}일 남음`}
+                            {result.type === 'past' && `${result.days}일 째`}
+                            {result.type === 'today' && `오늘이 그날입니다!`}
                         </div>
                     </div>
                 )}
             </div>
 
-            {/* Common Anniversaries (Yearly) - Only show if past or today */}
+            {/* Anniversary Calc for Past Dates (Couples) */}
             {result && (result.type === 'past' || result.type === 'today') && targetDate && (
                 <div className={`${styles.card} glass-panel`}>
-                    <h3>Anniversaries</h3>
+                    <h3>📅 주요 기념일 계산</h3>
                     <div className={styles.anniversaryList}>
-                        {[1, 2, 3, 5, 10].map(years => {
+                        {[100, 200, 300, 365, 500, 1000].map(days => {
                             const date = new Date(targetDate);
-                            date.setFullYear(date.getFullYear() + years);
-
-                            // If isDay1 is true, logic might be slightly different for "days count" but for yearly anniversary date it's usually just +Year
-                            // However, if we want to show "Nth day", we stick to date calculation.
-                            // For US style, "1 Year Anniversary" is just same date next year.
+                            // Correct logic: Target + (Days - 1)ms if Day 1 is included
+                            // If Day 1 included: Day 100 = Target + 99 days
+                            // If Day 1 excluded: Day 100 = Target + 100 days
+                            const offset = isDay1 ? days - 1 : days;
+                            date.setDate(date.getDate() + offset);
 
                             return (
-                                <div key={years} className={styles.anniversaryItem}>
-                                    <span className={styles.annivLabel}>{years} Year{years > 1 ? 's' : ''}</span>
-                                    <span className={styles.annivDate}>{date.toLocaleDateString()}</span>
+                                <div key={days} className={styles.anniversaryItem}>
+                                    <span className={styles.annivLabel}>
+                                        {days === 365 ? '1주년' : `${days}일`}
+                                    </span>
+                                    <span className={styles.annivDate}>
+                                        {date.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' })}
+                                    </span>
                                 </div>
                             );
                         })}

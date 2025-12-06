@@ -32,6 +32,9 @@ export default function FaviconGeneratorClient() {
                 canvas.height = size;
                 const ctx = canvas.getContext('2d');
                 if (ctx) {
+                    // Smoothing quality
+                    ctx.imageSmoothingEnabled = true;
+                    ctx.imageSmoothingQuality = 'high';
                     ctx.drawImage(img, 0, 0, size, size);
                     return { size, url: canvas.toDataURL('image/png') };
                 }
@@ -62,10 +65,11 @@ export default function FaviconGeneratorClient() {
                 />
                 <label htmlFor="file-upload" className={styles.uploadLabel}>
                     {selectedImage ? (
-                        <img src={selectedImage} alt="Preview" className={styles.previewImage} />
+                        <img src={selectedImage} alt="미리보기" className={styles.previewImage} />
                     ) : (
                         <div className={styles.uploadPlaceholder}>
-                            <span>Select Image or Drag & Drop</span>
+                            <span>이미지 파일 선택</span>
+                            <span className={styles.subText}>(또는 여기로 드래그 앤 드롭)</span>
                         </div>
                     )}
                 </label>
@@ -73,18 +77,19 @@ export default function FaviconGeneratorClient() {
 
             {favicons.length > 0 && (
                 <div className={styles.results}>
+                    <h3 className={styles.resultTitle}>생성된 아이콘</h3>
                     {favicons.map((favicon) => (
                         <div key={favicon.size} className={`${styles.resultCard} glass-panel`}>
                             <div className={styles.iconPreview}>
                                 <img src={favicon.url} alt={`${favicon.size}x${favicon.size}`} width={favicon.size > 64 ? 64 : favicon.size} height={favicon.size > 64 ? 64 : favicon.size} />
                             </div>
                             <div className={styles.iconInfo}>
-                                <h3>{favicon.size}x{favicon.size}</h3>
+                                <div className={styles.sizeLabel}>{favicon.size} x {favicon.size}</div>
                                 <button
                                     onClick={() => downloadFavicon(favicon.url, favicon.size)}
                                     className={styles.downloadBtn}
                                 >
-                                    Download PNG
+                                    다운로드 (PNG)
                                 </button>
                             </div>
                         </div>

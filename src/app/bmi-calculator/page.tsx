@@ -3,12 +3,12 @@ import styles from './page.module.css';
 import BMIClient from './BMIClient';
 
 export const metadata: Metadata = {
-    title: 'Free BMI Calculator | Body Mass Index Checker',
-    description: 'Calculate your Body Mass Index (BMI) instantly. Supports Metric (kg/cm) and Imperial (lbs/ft) units. Check your health category.',
-    keywords: ['BMI calculator', 'body mass index', 'weight checker', 'health calculator', 'obesity calculator'],
+    title: '비만도 계산기 (BMI) | 다이어트 필수 체크',
+    description: '키와 몸무게만으로 비만도를 무료로 측정하세요. 정상, 과체중, 비만 여부를 즉시 확인하고 건강한 다이어트 계획을 세우세요.',
+    keywords: ['비만도계산기', 'BMI계산기', '다이어트', '비만측정', '정상체중', '기초대사량'],
     openGraph: {
-        title: 'Free BMI Calculator | minibell.com',
-        description: 'Check your Body Mass Index instantly.',
+        title: '무료 비만도 계산기 (BMI) | 미니벨 유틸리티',
+        description: '내 비만도는 정상일까? 3초 만에 결과 확인하기',
         type: 'website',
     }
 };
@@ -16,51 +16,45 @@ export const metadata: Metadata = {
 export default function BMICalculatorPage() {
     return (
         <div className={styles.pageWrapper}>
-            <h1 className={styles.title}>BMI Calculator</h1>
+            <h1 className={styles.title}>비만도 계산기 (BMI)</h1>
             <p className={styles.description}>
-                Check your Body Mass Index (BMI) to assess your healthy weight range.
+                키와 몸무게를 입력하여 나의 비만도와 건강 상태를 확인해보세요.
             </p>
 
             <BMIClient />
 
             <section className={styles.seoSection}>
-                <h2>What is BMI?</h2>
+                <h2>BMI(체질량지수)란?</h2>
                 <p>
-                    <strong>Body Mass Index (BMI)</strong> is a simple calculation using a person's height and weight. The formula is BMI = kg/m². It is widely used by healthcare professionals as a quick screening tool to categorize weight status: Underweight, Normal weight, Overweight, or Obese.
-                </p>
-                <p>
-                    While BMI is not a direct measure of body fat, it is a useful indicator of potential health risks associated with being underweight or overweight.
+                    <strong>BMI (Body Mass Index)</strong>는 체중(kg)을 신장(m)의 제곱으로 나눈 값으로, 비만도를 판정하는 가장 널리 쓰이는 국제 표준입니다. 체지방을 직접 측정하지는 않지만, 체지방량과 상관관계가 높아 건강 위험을 예측하는 지표로 활용됩니다.
                 </p>
 
-                <h2>BMI Categories</h2>
+                <h2>비만도 판정 기준 (대한비만학회)</h2>
                 <ul>
-                    <li><strong>Underweight:</strong> BMI less than 18.5</li>
-                    <li><strong>Normal weight:</strong> BMI 18.5 – 24.9</li>
-                    <li><strong>Overweight:</strong> BMI 25 – 29.9</li>
-                    <li><strong>Obesity:</strong> BMI 30 or greater</li>
+                    <li><strong>저체중:</strong> 18.5 미만</li>
+                    <li><strong>정상:</strong> 18.5 ~ 22.9</li>
+                    <li><strong>과체중 (비만 전단계):</strong> 23 ~ 24.9</li>
+                    <li><strong>비만 1단계:</strong> 25 ~ 29.9</li>
+                    <li><strong>비만 2단계:</strong> 30 ~ 34.9</li>
+                    <li><strong>고도비만:</strong> 35 이상</li>
                 </ul>
+                <p className={styles.note}>
+                    * 서구권 기준과 달리 한국인은 BMI 25 이상부터 비만으로 정의합니다. (아시아 태평양 기준)
+                </p>
 
-                <h2>How to Use This Tool</h2>
-                <ol>
-                    <li><strong>Select Unit:</strong> Choose between Metric (Kilograms & Centimeters) or Imperial (Pounds & Feet/Inches).</li>
-                    <li><strong>Enter Height:</strong> Input your height accurately.</li>
-                    <li><strong>Enter Weight:</strong> Input your current weight.</li>
-                    <li><strong>See Result:</strong> Your BMI score and category will appear instantly.</li>
-                </ol>
-
-                <h2>FAQ</h2>
+                <h2>자주 묻는 질문 (FAQ)</h2>
                 <div className={styles.faqList}>
                     <div className={styles.faqItem}>
-                        <h3>Q. Is BMI accurate for everyone?</h3>
-                        <p>A. No. BMI does not distinguish between muscle and fat. Athletes with high muscle mass may be classified as "overweight" despite having low body fat. It also may not be accurate for pregnant women or the elderly.</p>
+                        <h3>Q. BMI는 누구에게나 정확한가요?</h3>
+                        <p>A. 아닙니다. 근육량이 많은 운동선수나 임신부, 노약자의 경우 BMI만으로는 정확한 비만도를 판정하기 어렵습니다. <strong>체성분 분석(인바디)</strong>을 함께 하는 것이 좋습니다.</p>
                     </div>
                     <div className={styles.faqItem}>
-                        <h3>Q. What should I do if my BMI is high?</h3>
-                        <p>A. A high BMI can be an indicator of high body fatness. If you are concerned about your weight, consult with a healthcare provider. They can perform further assessments and help you create a healthy lifestyle plan.</p>
+                        <h3>Q. 정상 체중을 유지하려면 어떻게 해야 하나요?</h3>
+                        <p>A. 규칙적인 식사와 주 3회 이상의 유산소 운동이 필수적입니다. 단순히 체중을 줄이는 것보다 근육량을 유지하면서 체지방을 줄이는 것이 중요합니다.</p>
                     </div>
                     <div className={styles.faqItem}>
-                        <h3>Q. Why are there two unit systems?</h3>
-                        <p>A. The Metric system is used globally, while the Imperial system is primarily used in the United States. We provide both to ensure everyone can use our tool easily.</p>
+                        <h3>Q. 고도비만이면 바로 운동해도 되나요?</h3>
+                        <p>A. 갑작스러운 고강도 운동은 관절에 무리를 줄 수 있습니다. 식단 조절과 가벼운 걷기부터 시작하여 전문의와 상담하는 것을 권장합니다.</p>
                     </div>
                 </div>
             </section>

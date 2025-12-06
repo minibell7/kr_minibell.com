@@ -1,12 +1,17 @@
 import BlocksClient from './BlocksClient';
 import { Metadata } from 'next';
+import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'Neon Blocks - mini-bell.com',
-    description: 'Classic block puzzle game with a Cyberpunk Neon twist.',
+    title: '네온 블록 (테트리스) | 무료 추억의 퍼즐 게임',
+    description: '사이버펑크 네온 스타일로 재탄생한 고전 블록 퍼즐 게임입니다. 설치 없이 웹에서 바로 즐기세요. 모바일 터치 조작 지원.',
+    keywords: ['테트리스', '블록게임', '무료게임', '고전게임', '퍼즐게임', '네온게임', '웹게임'],
+    openGraph: {
+        title: '네온 블록 | 미니벨 아케이드',
+        description: '지금 바로 도전하여 최고 점수를 기록하세요!',
+        type: 'website',
+    }
 };
-
-import styles from './page.module.css';
 
 export default function BlocksPage() {
     return (
@@ -14,40 +19,31 @@ export default function BlocksPage() {
             <BlocksClient />
 
             <section className={styles.seoSection}>
-                <h2>About Neon Blocks</h2>
+                <h2>네온 블록(Neon Blocks) 소개</h2>
                 <p>
-                    <strong>Neon Blocks</strong> is a modern, cyberpunk-inspired reimagining of the classic block puzzle game that took the world by storm in the 80s. We've kept the addictive gameplay you know and love—fitting falling tetrominoes together to clear lines—but gave it a fresh, glowing aesthetic that fits perfectly with the synthwave vibe.
-                </p>
-                <p>
-                    Whether you're looking to kill a few minutes or chase a new high score, Neon Blocks offers a satisfying blend of strategy, speed, and visual flair.
+                    <strong>네온 블록</strong>은 80년대를 풍미했던 전설적인 블록 퍼즐 게임을 현대적인 사이버펑크 감성으로 재해석한 게임입니다. 떨어지는 블록(테트로미노)들을 빈틈없이 끼워 맞춰 라인을 삭제하고 점수를 획득하세요.
                 </p>
 
-                <h2>Game Rules</h2>
+                <h2>게임 규칙</h2>
                 <ul>
-                    <li><strong>The Goal:</strong> Rotate and move the falling blocks to create solid horizontal lines without gaps.</li>
-                    <li><strong>Clearing Lines:</strong> When a line is completed, it disappears, and you earn points. Clearing multiple lines at once (a "Tetris") awards significantly more points.</li>
-                    <li><strong>Game Over:</strong> The game ends when the stack of blocks reaches the top of the screen.</li>
-                    <li><strong>Level Up:</strong> As you clear lines, the game speed increases, testing your reflexes and decision-making skills.</li>
+                    <li><strong>목표:</strong> 블록들을 가로 한 줄로 꽉 채우면 해당 라인이 사라지고 점수를 얻습니다.</li>
+                    <li><strong>콤보:</strong> 한 번에 여러 줄을 없애면('테트리스') 더 높은 점수를 받습니다.</li>
+                    <li><strong>레벨 업:</strong> 점수가 쌓이면 레벨이 오르고 블록이 떨어지는 속도가 빨라집니다.</li>
+                    <li><strong>게임 오버:</strong> 블록이 화면 꼭대기까지 쌓이면 게임이 끝납니다.</li>
                 </ul>
 
-                <h2>Controls</h2>
+                <h2>조작 방법</h2>
                 <ul>
-                    <li><strong>Arrow Keys / WASD:</strong> Move blocks left, right, or down.</li>
-                    <li><strong>Up Arrow / W:</strong> Rotate the block.</li>
-                    <li><strong>Spacebar:</strong> Hard drop (instantly place the block).</li>
-                    <li><strong>Touch Controls:</strong> On mobile, use the on-screen buttons to move and rotate.</li>
+                    <li><strong>이동:</strong> 방향키(←, →) 또는 A, D</li>
+                    <li><strong>회전:</strong> 위쪽 방향키(↑) 또는 W</li>
+                    <li><strong>빠르게 내리기(Soft Drop):</strong> 아래쪽 방향키(↓) 또는 S</li>
+                    <li><strong>한방에 내리기(Hard Drop):</strong> 스페이스바</li>
+                    <li><strong>모바일:</strong> 화면 하단의 가상 버튼을 사용하세요.</li>
                 </ul>
 
-                <h2>Tips for High Scores</h2>
-                <ul>
-                    <li><strong>Keep it Flat:</strong> Try to keep your stack as flat as possible. Avoid creating deep "wells" unless you have a long "I" piece ready to score a Tetris.</li>
-                    <li><strong>Look Ahead:</strong> Use the "Next Piece" preview to plan your moves. Knowing what's coming allows you to set up combos.</li>
-                    <li><strong>Master the Rotation:</strong> Learn how pieces rotate (especially near walls) to fit them into tight spots. This is often called "tucking" or "spinning."</li>
-                </ul>
-
-                <h2>Why Play Neon Blocks?</h2>
+                <h2>고득점 팁</h2>
                 <p>
-                    Aside from being incredibly fun, block puzzle games are known to improve spatial awareness and cognitive function. It's a mental workout that feels like play. Plus, our version is completely free, runs in your browser, and requires no downloads.
+                    블록을 평평하게 쌓으면서 긴 막대(I 블록)를 넣을 수 있는 한 칸을 비워두세요. I 블록이 나왔을 때 꽂아 넣으면 한 번에 4줄을 없애는 쾌감을 느낄 수 있습니다!
                 </p>
             </section>
         </div>

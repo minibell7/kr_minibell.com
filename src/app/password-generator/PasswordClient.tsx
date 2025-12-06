@@ -56,7 +56,7 @@ export default function PasswordClient() {
                 <button
                     className={`${styles.copyButton} ${copied ? styles.copied : ''}`}
                     onClick={copyToClipboard}
-                    title="Copy to Clipboard"
+                    title="클립보드에 복사"
                 >
                     {copied ? (
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -68,7 +68,7 @@ export default function PasswordClient() {
 
             <div className={styles.controls}>
                 <div className={styles.controlGroup}>
-                    <label>Password Length: {length}</label>
+                    <label>비밀번호 길이: {length}</label>
                     <input
                         type="range"
                         min="4"
@@ -86,7 +86,7 @@ export default function PasswordClient() {
                             checked={includeUppercase}
                             onChange={(e) => setIncludeUppercase(e.target.checked)}
                         />
-                        <span>Uppercase (A-Z)</span>
+                        <span>대문자 포함 (A-Z)</span>
                     </label>
                     <label className={styles.checkboxLabel}>
                         <input
@@ -94,7 +94,7 @@ export default function PasswordClient() {
                             checked={includeLowercase}
                             onChange={(e) => setIncludeLowercase(e.target.checked)}
                         />
-                        <span>Lowercase (a-z)</span>
+                        <span>소문자 포함 (a-z)</span>
                     </label>
                     <label className={styles.checkboxLabel}>
                         <input
@@ -102,7 +102,7 @@ export default function PasswordClient() {
                             checked={includeNumbers}
                             onChange={(e) => setIncludeNumbers(e.target.checked)}
                         />
-                        <span>Numbers (0-9)</span>
+                        <span>숫자 포함 (0-9)</span>
                     </label>
                     <label className={styles.checkboxLabel}>
                         <input
@@ -110,12 +110,12 @@ export default function PasswordClient() {
                             checked={includeSymbols}
                             onChange={(e) => setIncludeSymbols(e.target.checked)}
                         />
-                        <span>Symbols (!@#$)</span>
+                        <span>특수문자 포함 (@#$)</span>
                     </label>
                 </div>
 
                 <button className={styles.generateButton} onClick={generatePassword}>
-                    Generate New Password
+                    새 비밀번호 생성
                 </button>
             </div>
         </div>
