@@ -19,6 +19,29 @@
     max-width: 600px;
 }
 
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #ef4444, #f87171);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-align: center;
+    filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.4));
+}
+
+@media (max-width: 768px) {
+    .title {
+        background: none;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+        filter: none;
+    }
+}
+
 .inputArea {
     display: flex;
     gap: 1rem;

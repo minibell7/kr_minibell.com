@@ -8,6 +8,29 @@
     margin: 0 auto;
 }
 
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #fbbf24, #d97706);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-align: center;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4));
+}
+
+@media (max-width: 768px) {
+    .title {
+        background: none;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+        filter: none;
+    }
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -32,6 +55,8 @@
     justify-content: center;
     cursor: pointer;
     transition: transform 0.2s;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
 }
 
 .cookieCard:hover {

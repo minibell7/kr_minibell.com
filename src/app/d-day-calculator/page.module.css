@@ -25,6 +25,18 @@
     -webkit-text-fill-color: transparent;
     margin: 0;
     text-align: center;
+    filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.4));
+}
+
+@media (max-width: 768px) {
+    .title {
+        background: none;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
+        filter: none;
+    }
 }
 
 .description {

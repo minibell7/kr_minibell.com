@@ -8,6 +8,29 @@
     margin: 0 auto;
 }
 
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #7c3aed, #c026d3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    text-align: center;
+    filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.4));
+}
+
+@media (max-width: 768px) {
+    .title {
+        background: none;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+        filter: none;
+    }
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -28,6 +51,7 @@
     gap: 1.5rem;
     width: 100%;
     max-width: 400px;
+    background: var(--bg-secondary);
 }
 
 .label {
@@ -39,7 +63,7 @@
     padding: 0.8rem 1.5rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
     color: var(--text-primary);
     font-size: 1.2rem;
     width: 100%;
@@ -80,6 +104,8 @@
     gap: 1rem;
     width: 200px;
     text-align: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
 }
 
 .resultCard h3 {
