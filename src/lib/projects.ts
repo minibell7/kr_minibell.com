@@ -51,17 +51,6 @@ export const projects: Project[] = [
         category: 'utility',
         section: 'finance-health'
     },
-    {
-        id: 'tip-calculator',
-        title: '팁 계산기',
-        description: '팁과 더치페이 금액을 즉시 계산하세요.',
-        url: '/tip-calculator',
-        tags: ['Tool', 'Finance', 'Calc'],
-        featured: true,
-        category: 'utility',
-        section: 'finance-health'
-    },
-
     // --- Section 2: Daily Essentials ---
     {
         id: 'unit-converter',
@@ -188,34 +177,24 @@ export const projects: Project[] = [
 
     // --- Section 4: Fun & Arcade ---
     {
-        id: 'powerball',
-        title: '미국 파워볼 생성기',
-        description: '미국 파워볼 복권의 행운 번호를 생성해 보세요.',
-        url: '/powerball',
-        tags: ['Lotto', 'USA', 'Powerball'],
+        id: 'lotto-645',
+        title: '로또 6/45 생성기',
+        description: '행운의 로또 번호를 무료로 생성하세요.',
+        url: '/lotto-645',
+        tags: ['Lotto', 'Korea', 'Lucky'],
         featured: true,
         category: 'utility',
         section: 'fun-arcade'
     },
     {
-        id: 'mega-millions',
-        title: '미국 메가밀리언 생성기',
-        description: '미국 메가밀리언 복권의 행운 번호를 생성해 보세요.',
-        url: '/mega-millions',
-        tags: ['Lotto', 'USA', 'Mega Millions'],
+        id: 'meetup-calculator',
+        title: 'N빵 더치페이 계산기',
+        description: '회식비, 모임비를 공평하게 나누세요. 자투리 금액 처리까지!',
+        url: '/meetup-calc',
+        tags: ['Tool', 'Finance', 'Life'],
         featured: true,
         category: 'utility',
-        section: 'fun-arcade'
-    },
-    {
-        id: 'euromillions',
-        title: '유로밀리언 생성기',
-        description: '유로밀리언 복권의 행운 번호를 생성해 보세요.',
-        url: '/euromillions',
-        tags: ['Lotto', 'Europe', 'EuroMillions'],
-        featured: true,
-        category: 'utility',
-        section: 'fun-arcade'
+        section: 'finance-health'
     },
     {
         id: 'neon-blocks',

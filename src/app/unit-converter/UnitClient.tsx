@@ -8,7 +8,7 @@ type Category = 'Length' | 'Weight' | 'Area' | 'Temperature';
 const UNITS: Record<Category, string[]> = {
     Length: ['Meter (m)', 'Centimeter (cm)', 'Inch (in)', 'Foot (ft)', 'Yard (yd)', 'Kilometer (km)', 'Mile (mi)'],
     Weight: ['Kilogram (kg)', 'Gram (g)', 'Pound (lb)', 'Ounce (oz)'],
-    Area: ['Square Meter (m²)', 'Pyeong (pyeong)', 'Square Foot (ft²)', 'Acre (ac)'],
+    Area: ['Square Meter (m²)', 'Pyeong (평)', 'Square Foot (ft²)', 'Acre (ac)'],
     Temperature: ['Celsius (°C)', 'Fahrenheit (°F)', 'Kelvin (K)']
 };
 
@@ -86,13 +86,13 @@ export default function UnitClient() {
         else if (category === 'Area') {
             // To Square Meter
             if (fromUnit.includes('(m²)')) baseVal = val;
-            else if (fromUnit.includes('(pyeong)')) baseVal = val * 3.305785;
+            else if (fromUnit.includes('(평)')) baseVal = val * 3.305785;
             else if (fromUnit.includes('(ft²)')) baseVal = val * 0.092903;
             else if (fromUnit.includes('(ac)')) baseVal = val * 4046.86;
 
             // From Square Meter to Target
             if (toUnit.includes('(m²)')) setResult(baseVal.toString());
-            else if (toUnit.includes('(pyeong)')) setResult((baseVal / 3.305785).toFixed(4));
+            else if (toUnit.includes('(평)')) setResult((baseVal / 3.305785).toFixed(4));
             else if (toUnit.includes('(ft²)')) setResult((baseVal / 0.092903).toFixed(4));
             else if (toUnit.includes('(ac)')) setResult((baseVal / 4046.86).toFixed(6));
         }
