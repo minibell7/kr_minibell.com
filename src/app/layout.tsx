@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className={outfit.className}>
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-RHB18CY2VT"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XYTPQ1ZR07"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -43,7 +43,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-RHB18CY2VT');
+            gtag('config', 'G-XYTPQ1ZR07');
           `}
         </Script>
 
