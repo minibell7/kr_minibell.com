@@ -172,3 +172,50 @@
     /* Hide list on PC */
   }
 }
+
+/* Feature App Section Specifics */
+.featuredSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .bentoGrid {
+    display: flex;
+    /* Switch to flex for horizontal scroll */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
+    /* Add bottom padding for shadow */
+    margin: 0 -1rem;
+    /* Negative margin to pull to edges */
+    scroll-padding: 0 1rem;
+    -webkit-overflow-scrolling: touch;
+    width: calc(100% + 2rem);
+    /* Compensate margin */
+  }
+
+  /* Hide scrollbar */
+  .bentoGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bentoGrid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .bentoGrid>* {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+}
