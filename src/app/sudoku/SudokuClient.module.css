@@ -1,0 +1,208 @@
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #050510;
+    min-height: 600px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.statValue {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.difficultySelector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.difficultyBtn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.difficultyBtn:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.difficultyBtn.active {
+    border-color: #00ffff;
+    color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1px;
+    background-color: #00ffff;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1;
+}
+
+.cell {
+    background-color: #0a0a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    user-select: none;
+    position: relative;
+}
+
+/* Thick borders for 3x3 grids */
+.cell:nth-child(3n) {
+    border-right: 2px solid #00ffff;
+}
+
+.cell:nth-child(9n) {
+    border-right: none;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #00ffff;
+}
+
+.cell.initial {
+    color: #fff;
+}
+
+.cell.userInput {
+    color: #00ffff;
+    /* Cyber Cyan */
+}
+
+.cell.selected {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.cell.highlighted {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cell.sameNumber {
+    background-color: rgba(0, 255, 255, 0.3);
+}
+
+.cell.error {
+    background-color: rgba(255, 0, 85, 0.3);
+    color: #ff0055;
+    text-shadow: 0 0 5px #ff0055;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 1.5rem;
+}
+
+.numBtn {
+    aspect-ratio: 1;
+    background: #111;
+    border: 1px solid #333;
+    color: #00ffff;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.numBtn:hover {
+    background: #222;
+    border-color: #00ffff;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.actionBtn {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 1px solid #ff0055;
+    color: #ff0055;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.actionBtn:hover {
+    background: #ff0055;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+}
+
+.gameOverOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 2rem;
+    border: 2px solid #00ffff;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    z-index: 10;
+}
+
+@media (max-width: 500px) {
+    .board {
+        max-width: 100%;
+    }
+
+    .cell {
+        font-size: 1.2rem;
+    }
+
+    .keypad {
+        gap: 0.2rem;
+    }
+}

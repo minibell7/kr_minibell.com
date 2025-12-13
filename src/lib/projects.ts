@@ -236,6 +236,16 @@ export const projects: Project[] = [
         category: 'utility',
         section: 'fun-arcade'
     },
+    {
+        id: 'neon-sudoku',
+        title: '네온 스도쿠',
+        description: '사이버펑크 스타일의 스도쿠 퍼즐. 두뇌를 깨우세요.',
+        url: '/sudoku',
+        tags: ['Game', 'Puzzle', 'Neon'],
+        featured: true,
+        category: 'game',
+        section: 'fun-arcade'
+    },
 
     // --- Section 5: Featured Apps (Personal Projects) ---
     {
