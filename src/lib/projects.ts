@@ -7,8 +7,6 @@ export interface Project {
     featured: boolean;
     category: 'app' | 'utility' | 'content' | 'game';
     section?: 'finance-health' | 'daily-essentials' | 'creator-tools' | 'fun-arcade' | 'featured-app';
-    imageUrl?: string;
-    accentColor?: string;
 }
 
 export const projects: Project[] = [
@@ -243,50 +241,42 @@ export const projects: Project[] = [
     {
         id: 'dreamflow',
         title: '좀비체크',
-        description: '조용히 지갑을 털어가는 잊혀진 \'좀비\' 구독을 찾아보세요. 100% 로컬 & 비공개 금융 관리.',
+        description: '조용히 지갑을 털어가는 잊혀진 \'좀비\' 구독을 찾아보세요. 100% 로컬 & 비공개 - 은행 연동 불필요. 기억 속의 자동 이체와 실제 지출을 비교하여 숨겨진 비용을 찾아냅니다. 문 닫은 가게 화재 보험료를 1.5년이나 냈던 실제 경험에서 탄생했습니다!',
         url: 'https://zombiecheck.mini-bell.com/',
         tags: ['PWA', 'Finance', 'Privacy'],
         featured: true,
         category: 'app',
-        section: 'featured-app',
-        imageUrl: '/images/featured/zombie-check.png',
-        accentColor: '#10B981' // Emerald Green
+        section: 'featured-app'
     },
     {
         id: 'soul-animal',
         title: '소울 애니멀',
-        description: '당신의 진정한 영혼의 동물을 찾아주는 신비로운 심리 테스트. 16가지 독특한 아키타입.',
+        description: '저의 3번째 PWA 작품입니다. 당신의 진정한 영혼의 동물을 찾아주는 신비로운 심리 테스트. 16가지 독특한 아키타입과 아름다운 AI 생성 이미지를 만나보세요.',
         url: 'https://soulanimal.mini-bell.com/',
         tags: ['PWA', 'Fun', 'Mystical'],
         featured: true,
         category: 'app',
-        section: 'featured-app',
-        imageUrl: '/images/featured/soul-animal.png',
-        accentColor: '#8B5CF6' // Violet
+        section: 'featured-app'
     },
     {
         id: 'pet-bti',
         title: '펫 BTI',
-        description: '우리 강아지, 고양이의 MBTI는? AI가 분석해주는 반려동물 성격 유형 테스트.',
+        description: '비개발자로서 만든 첫 "Vibe Coding" 프로젝트입니다. 아이디어가 현실이 될 수 있다는 것을 증명하기 위해 AI와 함께 만들었습니다. 이 프로젝트는 의심을 확신으로 바꾸고 제 여정의 시작이 되었습니다.',
         url: 'https://pet-bti.mini-bell.com/',
         tags: ['PWA', 'Fun', 'AI'],
         featured: true,
         category: 'app',
-        section: 'featured-app',
-        imageUrl: '/images/featured/pet-bti.png',
-        accentColor: '#F59E0B' // Amber
+        section: 'featured-app'
     },
     {
         id: 'flirting-test',
         title: '플러팅 능력 고사',
-        description: '설레는 상황극으로 알아보는 나의 연애 스타일과 플러팅 레벨 진단.',
+        description: '저의 4번째 PWA 작품입니다. 다양한 상황극을 통해 당신의 플러팅 실력과 연애 스타일을 진단해보세요.',
         url: 'https://flirting-kr.mini-bell.com/',
         tags: ['PWA', 'Fun', 'AI'],
         featured: true,
         category: 'app',
-        section: 'featured-app',
-        imageUrl: '/images/featured/flirting-test.png',
-        accentColor: '#EC4899' // Pink
+        section: 'featured-app'
     },
 
     // --- Content / Blogs ---

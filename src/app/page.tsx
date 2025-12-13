@@ -1,7 +1,6 @@
 import styles from './page.module.css';
 import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
-import FeaturedAppCard from '@/components/FeaturedAppCard';
 import { getFeaturedProjects } from '@/lib/projects';
 import Link from 'next/link';
 
@@ -167,14 +166,14 @@ export default function Home() {
       </section>
 
       {/* Section 5: Featured Apps (Personal Projects) */}
-      <section className={`${styles.section} ${styles.featuredSection}`} style={{ animationDelay: '1.0s' }}>
+      <section className={styles.section} style={{ animationDelay: '1.0s' }}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle} style={{ fontSize: '2.5rem' }}>🔥 추천 앱</h2>
-          <p className={styles.sectionDesc}>시각적 즐거움과 유용한 기능을 담은 프리미엄 프로젝트</p>
+          <h2 className={styles.sectionTitle}>추천 앱</h2>
+          <p className={styles.sectionDesc}>열정으로 만든 특별한 프로젝트들</p>
         </div>
-        <div className={styles.bentoGrid}>
+        <div className={styles.grid}>
           {featuredApps.map((project) => (
-            <FeaturedAppCard key={project.id} project={project} />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </section>
