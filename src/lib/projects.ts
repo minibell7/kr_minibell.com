@@ -269,6 +269,16 @@ export const projects: Project[] = [
         section: 'featured-app'
     },
     {
+        id: 'zenith-brain-training',
+        title: 'Zenith',
+        description: '매일 두뇌를 깨우는 훈련을해보세요! 머리가 좋아지는 게임을 통해 6가지 능력을 개발시켜드립니다.',
+        url: 'https://zenith.mini-bell.com/',
+        tags: ['PWA', 'Brain', 'Puzzle'],
+        featured: true,
+        category: 'app',
+        section: 'featured-app'
+    },
+    {
         id: 'flirting-test',
         title: '플러팅 능력 고사',
         description: '저의 4번째 PWA 작품입니다. 다양한 상황극을 통해 당신의 플러팅 실력과 연애 스타일을 진단해보세요.',
