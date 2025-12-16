@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import ThemeToggle from "@/components/ThemeToggle";
 import CustomCursor from "@/components/CustomCursor";
 import ScrollProgress from "@/components/ScrollProgress";
+import GoogleAdsense from "@/components/GoogleAdsense"; // Import AdSense
 import Script from "next/script";
 
 const outfit = Outfit({ subsets: ["latin"] });
@@ -56,6 +57,7 @@ export default function RootLayout({
           <Header />
           <main className="container" style={{ minHeight: '80vh', paddingTop: '2rem', position: 'relative', zIndex: 1 }}>
             {children}
+            <GoogleAdsense slot="3688754480" />
           </main>
           <Footer />
         </ThemeProvider>

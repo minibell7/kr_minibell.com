@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
 import { getFeaturedProjects } from '@/lib/projects';
 import Link from 'next/link';
+import GoogleAdsense from '@/components/GoogleAdsense';
 
 // Simple Typing Animation Component
 const TypingText = ({ text }: { text: string }) => {
@@ -128,6 +129,17 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* AdSense Unit - Feed */}
+      <div className="container" style={{ margin: '3rem 0', textAlign: 'center' }}>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '0.5rem', opacity: 0.6 }}>Sponsored</p>
+        <GoogleAdsense
+          slot="3688754480"
+          format="horizontal"
+          responsive="true"
+          style={{ display: 'block', maxHeight: '180px', overflow: 'hidden' }}
+        />
+      </div>
 
       {/* Section 3: Creator Tools */}
       <section className={styles.section} style={{ animationDelay: '0.6s' }}>
