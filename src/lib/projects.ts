@@ -291,9 +291,9 @@ export const projects: Project[] = [
     {
         id: 'khair',
         title: 'K-hair',
-        description: 'khair.mini-bell.com',
+        description: '김해공항을 통해 디즈니랜드 및 해외여행을 가는 여행객들을 위한 필수 정보와 링크 모음집.',
         url: 'https://khair.mini-bell.com/',
-        tags: ['Web', 'Service'],
+        tags: ['Travel', 'Info', 'Airport'],
         featured: true,
         category: 'app',
         section: 'featured-app'
@@ -301,9 +301,9 @@ export const projects: Project[] = [
     {
         id: 'dgair',
         title: 'DG-air',
-        description: 'dgair.mini-bell.com',
+        description: '대구공항 출발 여행객을 위한 디즈니랜드 및 해외여행 정보 가이드.',
         url: 'https://dgair.mini-bell.com/',
-        tags: ['Web', 'Service'],
+        tags: ['Travel', 'Info', 'Airport'],
         featured: true,
         category: 'app',
         section: 'featured-app'
@@ -311,9 +311,9 @@ export const projects: Project[] = [
     {
         id: 'cjair',
         title: 'CJ-air',
-        description: 'cjair.mini-bell.com',
+        description: '청주공항을 이용하는 여행객들을 위한 맞춤형 여행 정보와 링크 서비스.',
         url: 'https://cjair.mini-bell.com/',
-        tags: ['Web', 'Service'],
+        tags: ['Travel', 'Info', 'Airport'],
         featured: true,
         category: 'app',
         section: 'featured-app'
