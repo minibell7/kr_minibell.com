@@ -30,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="naver-site-verification" content="fa698ed31519bfed3a947ef9bd307f879b4631a7" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2875879574828967" crossOrigin="anonymous"></script>
       </head>
       <body className={outfit.className}>
