@@ -288,6 +288,36 @@ export const projects: Project[] = [
         category: 'app',
         section: 'featured-app'
     },
+    {
+        id: 'khair',
+        title: 'K-hair',
+        description: 'khair.mini-bell.com',
+        url: 'https://khair.mini-bell.com/',
+        tags: ['Web', 'Service'],
+        featured: true,
+        category: 'app',
+        section: 'featured-app'
+    },
+    {
+        id: 'dgair',
+        title: 'DG-air',
+        description: 'dgair.mini-bell.com',
+        url: 'https://dgair.mini-bell.com/',
+        tags: ['Web', 'Service'],
+        featured: true,
+        category: 'app',
+        section: 'featured-app'
+    },
+    {
+        id: 'cjair',
+        title: 'CJ-air',
+        description: 'cjair.mini-bell.com',
+        url: 'https://cjair.mini-bell.com/',
+        tags: ['Web', 'Service'],
+        featured: true,
+        category: 'app',
+        section: 'featured-app'
+    },
 
     // --- Content / Blogs ---
     {
